@@ -801,7 +801,8 @@ function openMediaLightbox(image) {
 
   const updateLightboxShape = () => {
     const ratio = mediaLightboxImage.naturalWidth / Math.max(mediaLightboxImage.naturalHeight, 1);
-    mediaLightbox.classList.toggle("is-wide", ratio > 1.55);
+    const isMobileViewport = window.matchMedia("(max-width: 760px)").matches;
+    mediaLightbox.classList.toggle("is-wide", !isMobileViewport && ratio > 1.55);
   };
 
   mediaLightboxImage.onload = updateLightboxShape;

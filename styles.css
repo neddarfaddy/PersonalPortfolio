@@ -6444,3 +6444,144 @@ body.theme-open {
     max-height: 70px;
   }
 }
+
+/* ==============================
+   v21 — mobile scroll, header, work-card spacing, and universal centered lightbox
+   Color picker button markup intentionally untouched.
+   ============================== */
+
+/* Work page project-card image strips: reduce image gaps on desktop and mobile. */
+.work-card-track {
+  gap: 8px;
+}
+
+@media (max-width: 760px) {
+  .work-card-track {
+    gap: 6px;
+  }
+}
+
+/* Mobile header should stay in one predictable place on every page. */
+@media (max-width: 760px) {
+  .site-header {
+    position: fixed;
+    top: max(12px, env(safe-area-inset-top));
+    left: 50%;
+    z-index: 90;
+    width: calc(100% - 24px);
+    margin: 0;
+    transform: translateX(-50%);
+  }
+
+  main {
+    padding-top: 96px;
+  }
+
+  .nav-shell {
+    min-height: 58px;
+  }
+}
+
+/* Mobile horizontal galleries: show a permanent scroll hint and allow vertical page scrolling. */
+@media (max-width: 760px) {
+  .case-carousel-viewport,
+  .care-screen-row {
+    position: relative;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    padding-bottom: 18px !important;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    overscroll-behavior-y: auto;
+    touch-action: pan-x pan-y !important;
+    scrollbar-width: thin !important;
+    scrollbar-color: color-mix(in srgb, var(--accent) 88%, white 4%) color-mix(in srgb, var(--panel-soft) 84%, transparent) !important;
+    background-image:
+      linear-gradient(90deg, color-mix(in srgb, var(--accent) 92%, white 4%), color-mix(in srgb, var(--accent) 92%, white 4%)),
+      linear-gradient(90deg, color-mix(in srgb, var(--panel-soft) 92%, transparent), color-mix(in srgb, var(--panel-soft) 92%, transparent));
+    background-repeat: no-repeat;
+    background-size: 32% 5px, 100% 5px;
+    background-position: left bottom, left bottom;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .case-carousel-viewport::-webkit-scrollbar,
+  .care-screen-row::-webkit-scrollbar {
+    display: block !important;
+    height: 10px !important;
+  }
+
+  .case-carousel-viewport::-webkit-scrollbar-track,
+  .care-screen-row::-webkit-scrollbar-track {
+    background: color-mix(in srgb, var(--panel-soft) 86%, transparent) !important;
+    border-radius: 999px;
+  }
+
+  .case-carousel-viewport::-webkit-scrollbar-thumb,
+  .care-screen-row::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--accent) 90%, white 4%) !important;
+    border-radius: 999px;
+    border: 2px solid color-mix(in srgb, var(--background) 80%, transparent);
+  }
+}
+
+/* Mobile lightbox: all case studies should open centered/focused, not only CareRoute. */
+@media (max-width: 760px) {
+  .media-lightbox,
+  .media-lightbox.is-wide {
+    display: grid;
+    place-items: center;
+    align-items: center;
+    justify-items: center;
+    padding: 12px;
+  }
+
+  .media-lightbox-frame,
+  .media-lightbox.is-wide .media-lightbox-frame,
+  .media-lightbox.is-care-route .media-lightbox-frame {
+    width: min(100%, calc(100vw - 24px));
+    height: auto;
+    max-height: calc(100svh - 24px);
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    overflow: hidden;
+    border: 1px solid var(--stroke);
+    border-radius: 10px;
+    padding-top: 0;
+    background: var(--panel);
+  }
+
+  .media-lightbox img,
+  .media-lightbox.is-wide img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: calc(100svh - 112px);
+    display: block;
+    object-fit: contain;
+    object-position: center center;
+  }
+
+  .media-lightbox.is-care-route img {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .media-lightbox-caption,
+  .media-lightbox.is-wide .media-lightbox-caption,
+  .media-lightbox.is-care-route .media-lightbox-caption {
+    position: static;
+    width: 100%;
+    min-height: 0;
+    max-height: 72px;
+    overflow: auto;
+    border-right: 0;
+    border-top: 1px solid var(--stroke);
+    padding: 10px 12px;
+    background: var(--panel);
+  }
+}
