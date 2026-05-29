@@ -44,12 +44,11 @@ const mediaLightboxCaption = document.querySelector("[data-media-caption]");
 const mediaCloseButtons = document.querySelectorAll("[data-media-close]");
 const gsapScript = document.querySelector("[data-gsap]");
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-const THEME_STORAGE_KEY = "portfolio-theme-v16";
+const THEME_STORAGE_KEY = "portfolio-theme-v17";
 const extraThemes = [
   { value: "acid", label: "Acid", swatch: "swatch-acid" },
   { value: "blue", label: "Blue", swatch: "swatch-blue" },
   { value: "ocean", label: "Ocean", swatch: "swatch-ocean" },
-  { value: "violet", label: "Violet", swatch: "swatch-violet" },
   { value: "red", label: "Red", swatch: "swatch-red" },
   { value: "ruby", label: "Ruby", swatch: "swatch-ruby" },
   { value: "gold", label: "Gold", swatch: "swatch-gold" },
@@ -584,8 +583,17 @@ function setupAutoCarousels() {
     let startScrollLeft = 0;
     let pressedImage = null;
     let activePointerId = null;
+    let touchStartX = 0;
+    let touchStartY = 0;
 
     const imageSelector = ".case-image, .care-screen-row img";
+
+    const markDragged = () => {
+      carousel.dataset.dragged = "true";
+      window.setTimeout(() => {
+        delete carousel.dataset.dragged;
+      }, 220);
+    };
 
     const endDrag = () => {
       if (!isDragging) return;
@@ -593,15 +601,33 @@ function setupAutoCarousels() {
       activePointerId = null;
       carousel.classList.remove("is-dragging");
 
-      if (dragStarted) {
-        carousel.dataset.dragged = "true";
-        window.setTimeout(() => {
-          delete carousel.dataset.dragged;
-        }, 180);
-      }
+      if (dragStarted) markDragged();
     };
 
+    carousel.addEventListener("touchstart", (event) => {
+      const touch = event.touches?.[0];
+      if (!touch) return;
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+      carousel.classList.add("is-touching");
+    }, { passive: true });
+
+    carousel.addEventListener("touchmove", (event) => {
+      const touch = event.touches?.[0];
+      if (!touch) return;
+      const deltaX = touch.clientX - touchStartX;
+      const deltaY = touch.clientY - touchStartY;
+      if (Math.abs(deltaX) > 8 && Math.abs(deltaX) > Math.abs(deltaY)) {
+        markDragged();
+      }
+    }, { passive: true });
+
+    carousel.addEventListener("touchend", () => {
+      carousel.classList.remove("is-touching");
+    }, { passive: true });
+
     carousel.addEventListener("pointerdown", (event) => {
+      if (event.pointerType === "touch") return;
       if (event.button !== 0 && event.pointerType === "mouse") return;
       const target = event.target;
       pressedImage = target instanceof Element ? target.closest(imageSelector) : null;
@@ -615,6 +641,7 @@ function setupAutoCarousels() {
     });
 
     carousel.addEventListener("pointermove", (event) => {
+      if (event.pointerType === "touch") return;
       if (!isDragging || activePointerId !== event.pointerId) return;
 
       const delta = event.clientX - startX;
@@ -644,7 +671,6 @@ function setupAutoCarousels() {
     });
   });
 }
-
 function setupVideoPreviews() {
   const videoPreviewCards = document.querySelectorAll(".case-video-card");
   if (!videoPreviewCards.length) return;
@@ -717,6 +743,7 @@ function openMediaLightbox(image) {
   mediaLightboxImage.src = image.currentSrc || image.src;
   mediaLightboxImage.alt = image.alt || caption;
   mediaLightbox.classList.remove("is-wide");
+  mediaLightbox.querySelector(".media-lightbox-frame")?.scrollTo?.(0, 0);
 
   const updateLightboxShape = () => {
     const ratio = mediaLightboxImage.naturalWidth / Math.max(mediaLightboxImage.naturalHeight, 1);
@@ -734,6 +761,7 @@ function openMediaLightbox(image) {
   mediaLightbox.classList.add("is-open");
   mediaLightbox.setAttribute("aria-hidden", "false");
   document.body.classList.add("media-open");
+  window.setTimeout(() => mediaLightbox.querySelector("[data-media-close]")?.focus?.(), 0);
 }
 
 function closeMediaLightbox() {

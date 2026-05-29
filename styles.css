@@ -6213,3 +6213,90 @@ html[data-theme="red"] {
     max-width: 74vw;
   }
 }
+
+
+/* ==============================
+   v17 — theme naming, mobile drag, centered lightbox
+   Color picker button untouched.
+   ============================== */
+.case-carousel-viewport,
+.care-screen-row {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-inline: contain;
+  touch-action: pan-x pan-y;
+  scroll-behavior: auto;
+  scroll-snap-type: none !important;
+}
+
+.case-carousel-track,
+.care-screen-row {
+  will-change: scroll-position;
+}
+
+.case-carousel-viewport.is-touching,
+.case-carousel-viewport.is-dragging,
+.care-screen-row.is-touching,
+.care-screen-row.is-dragging {
+  cursor: grabbing;
+}
+
+.theme-option[data-theme-value="violet"] .theme-swatch {
+  background: linear-gradient(135deg, #1b1029 0 48%, #a986ff 48% 100%);
+}
+
+@media (max-width: 760px) {
+  .media-lightbox {
+    display: grid;
+    place-items: center;
+    align-items: center;
+    justify-items: center;
+    padding: 12px;
+  }
+
+  .media-lightbox-frame,
+  .media-lightbox.is-wide .media-lightbox-frame {
+    width: min(100%, calc(100vw - 24px));
+    height: auto;
+    max-height: calc(100svh - 24px);
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    overflow: hidden;
+    border: 1px solid var(--stroke);
+    border-radius: 10px;
+    padding-top: 0;
+    background: var(--panel);
+  }
+
+  .media-lightbox img,
+  .media-lightbox.is-wide img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: calc(100svh - 112px);
+    object-fit: contain;
+    object-position: center center;
+    display: block;
+  }
+
+  .media-lightbox-caption,
+  .media-lightbox.is-wide .media-lightbox-caption {
+    position: static;
+    width: 100%;
+    min-height: 0;
+    max-height: 72px;
+    overflow: auto;
+    border-right: 0;
+    border-top: 1px solid var(--stroke);
+    padding: 10px 12px;
+    background: var(--panel);
+  }
+
+  .media-lightbox-close {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 3;
+  }
+}
