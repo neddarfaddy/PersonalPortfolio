@@ -6300,3 +6300,147 @@ html[data-theme="red"] {
     z-index: 3;
   }
 }
+
+/* ==============================
+   v20 — mobile CareRoute zoom, visible scrollbars, safer picker/form polish
+   Color picker button untouched.
+   ============================== */
+
+/* All contact drawers now use the shorter form. Keep it tidy on every page. */
+.contact-form .form-row + label,
+.contact-form label + label {
+  margin-top: 0;
+}
+
+/* Make horizontal galleries obviously scrollable instead of hiding the bar. */
+.case-carousel-viewport,
+.care-screen-row {
+  scrollbar-width: thin !important;
+  scrollbar-color: color-mix(in srgb, var(--accent) 70%, var(--text-muted)) color-mix(in srgb, var(--panel-soft) 70%, transparent) !important;
+}
+
+.case-carousel-viewport::-webkit-scrollbar,
+.care-screen-row::-webkit-scrollbar {
+  display: block !important;
+  height: 9px;
+}
+
+.case-carousel-viewport::-webkit-scrollbar-track,
+.care-screen-row::-webkit-scrollbar-track {
+  background: color-mix(in srgb, var(--panel-soft) 70%, transparent);
+  border-radius: 999px;
+}
+
+.case-carousel-viewport::-webkit-scrollbar-thumb,
+.care-screen-row::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--accent) 72%, var(--text-muted));
+  border-radius: 999px;
+}
+
+.case-carousel-viewport::-webkit-scrollbar-thumb:hover,
+.care-screen-row::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Stop the mobile page from moving behind the color menu. */
+body.theme-open {
+  overscroll-behavior: none;
+}
+
+.theme-menu {
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) rgba(var(--panel-rgb), 0.38);
+}
+
+.theme-menu::-webkit-scrollbar {
+  width: 8px;
+}
+
+.theme-menu::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 999px;
+}
+
+@media (max-width: 760px) {
+  body.theme-open {
+    overflow: hidden;
+  }
+
+  .theme-picker {
+    left: 14px;
+    bottom: max(14px, env(safe-area-inset-bottom));
+  }
+
+  .theme-menu {
+    position: fixed;
+    left: 14px;
+    bottom: calc(max(14px, env(safe-area-inset-bottom)) + 66px);
+    width: min(240px, calc(100vw - 28px));
+    max-height: min(58svh, 420px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .theme-option {
+    min-height: 44px;
+  }
+
+  /* Native mobile swipe should handle galleries. Desktop keeps pointer drag. */
+  .case-carousel-viewport,
+  .care-screen-row {
+    cursor: auto !important;
+    touch-action: pan-x !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity !important;
+    padding-bottom: 10px;
+  }
+
+  .case-carousel-slide {
+    scroll-snap-align: start;
+  }
+
+  /* CareRoute phone screenshots need to read bigger on mobile. */
+  .case-careroute .care-phone-carousel .case-carousel-slide,
+  .case-careroute .care-phone-carousel .case-carousel-cover {
+    flex-basis: min(82vw, 360px) !important;
+  }
+
+  .case-careroute .care-phone-carousel .case-image {
+    width: 100%;
+    height: min(72svh, 680px);
+    object-fit: cover !important;
+    object-position: center top;
+  }
+
+  .case-careroute .care-screen-row img {
+    min-width: min(82vw, 360px);
+    height: min(70svh, 660px);
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  /* When a CareRoute phone shot opens, keep it centered and zoomed, not tiny. */
+  .media-lightbox.is-care-route .media-lightbox-frame {
+    width: min(100%, calc(100vw - 20px));
+    height: min(86svh, 760px);
+    max-height: calc(100svh - 20px);
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+  }
+
+  .media-lightbox.is-care-route img {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: cover;
+    object-position: center top;
+    background: var(--background);
+  }
+
+  .media-lightbox.is-care-route .media-lightbox-caption {
+    max-height: 70px;
+  }
+}

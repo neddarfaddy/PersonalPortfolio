@@ -45,8 +45,8 @@ const mediaLightboxCaption = document.querySelector("[data-media-caption]");
 const mediaCloseButtons = document.querySelectorAll("[data-media-close]");
 const gsapScript = document.querySelector("[data-gsap]");
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-const THEME_STORAGE_KEY = "portfolio-theme-v18";
-const OLD_THEME_STORAGE_KEYS = ["portfolio-theme", "portfolio-theme-v16", "portfolio-theme-v17"];
+const THEME_STORAGE_KEY = "portfolio-theme-v20";
+const OLD_THEME_STORAGE_KEYS = ["portfolio-theme", "portfolio-theme-v16", "portfolio-theme-v17", "portfolio-theme-v18"];
 const THEME_BACKGROUNDS = {
   default: "#121312",
   olive: "#10140f",
@@ -791,9 +791,12 @@ function openMediaLightbox(image) {
     image.alt ||
     "Case study image";
 
+  const isCareRouteImage = Boolean(image.closest(".case-careroute"));
+
   mediaLightboxImage.src = image.currentSrc || image.src;
   mediaLightboxImage.alt = image.alt || caption;
-  mediaLightbox.classList.remove("is-wide");
+  mediaLightbox.classList.remove("is-wide", "is-care-route");
+  mediaLightbox.classList.toggle("is-care-route", isCareRouteImage);
   mediaLightbox.querySelector(".media-lightbox-frame")?.scrollTo?.(0, 0);
 
   const updateLightboxShape = () => {
@@ -818,7 +821,7 @@ function openMediaLightbox(image) {
 function closeMediaLightbox() {
   if (!mediaLightbox || mediaLightbox.getAttribute("aria-hidden") === "true") return;
 
-  mediaLightbox.classList.remove("is-open");
+  mediaLightbox.classList.remove("is-open", "is-care-route");
   mediaLightbox.setAttribute("aria-hidden", "true");
   document.body.classList.remove("media-open");
 
@@ -958,6 +961,7 @@ function closeThemeMenu() {
   themeToggle.setAttribute("aria-expanded", "false");
   themeMenu.setAttribute("aria-hidden", "true");
   themeMenu.setAttribute("inert", "");
+  document.body.classList.remove("theme-open");
 }
 
 function toggleThemeMenu() {
@@ -966,6 +970,7 @@ function toggleThemeMenu() {
   const isOpen = themePicker.classList.toggle("is-open");
   themeToggle.setAttribute("aria-expanded", String(isOpen));
   themeMenu.setAttribute("aria-hidden", String(!isOpen));
+  document.body.classList.toggle("theme-open", isOpen);
   if (isOpen) {
     themeMenu.removeAttribute("inert");
   } else {
@@ -977,6 +982,14 @@ themeToggle?.addEventListener("click", (event) => {
   event.stopPropagation();
   toggleThemeMenu();
 });
+
+themeMenu?.addEventListener("touchmove", (event) => {
+  event.stopPropagation();
+}, { passive: true });
+
+themeMenu?.addEventListener("wheel", (event) => {
+  event.stopPropagation();
+}, { passive: true });
 
 ensureExtraThemes();
 
