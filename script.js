@@ -44,7 +44,7 @@ const mediaLightboxCaption = document.querySelector("[data-media-caption]");
 const mediaCloseButtons = document.querySelectorAll("[data-media-close]");
 const gsapScript = document.querySelector("[data-gsap]");
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-const THEME_STORAGE_KEY = "portfolio-theme-v9";
+const THEME_STORAGE_KEY = "portfolio-theme-v16";
 const extraThemes = [
   { value: "acid", label: "Acid", swatch: "swatch-acid" },
   { value: "blue", label: "Blue", swatch: "swatch-blue" },
@@ -804,7 +804,7 @@ projectCards.forEach((card) => {
 });
 
 function setTheme(theme) {
-  const themeValue = theme || "default";
+  const themeValue = theme || "violet";
   document.documentElement.setAttribute("data-theme", themeValue);
 
   themeOptions.forEach((option) => {

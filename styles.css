@@ -5995,3 +5995,221 @@ html[data-theme="red"] {
     white-space: nowrap;
   }
 }
+
+/* ==============================
+   v16 — final mobile fixes requested
+   Color picker button untouched.
+   ============================== */
+
+/* CareRoute work preview should not feel faster than the other project previews. */
+.work-index-card:first-child .work-card-track {
+  animation-duration: 72s;
+}
+
+.work-index-card:nth-child(2) .work-card-track,
+.work-index-card:nth-child(3) .work-card-track {
+  animation-duration: 56s;
+}
+
+@media (max-width: 760px) {
+  /* Process shortcuts are navigation, not a drag carousel. */
+  .case-process-strip {
+    margin-top: 34px;
+    text-align: center;
+  }
+
+  .case-process-nav,
+  .case-process-nav.case-process-nav-compact {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: center;
+    gap: 10px;
+    width: min(100%, 390px);
+    margin: 18px auto 0;
+    padding: 0;
+    overflow: visible;
+    scroll-snap-type: none;
+    touch-action: auto;
+  }
+
+  .case-process-nav a,
+  .case-process-nav.case-process-nav-compact a {
+    min-width: 0;
+    width: 100%;
+    justify-content: center;
+    padding: 9px 10px;
+    white-space: nowrap;
+    scroll-snap-align: none;
+  }
+
+  .case-process-nav a + a::before,
+  .case-process-nav.case-process-nav-compact a + a::before {
+    display: none;
+  }
+
+  .case-process-nav span,
+  .case-process-nav.case-process-nav-compact span {
+    font-size: 0.62rem;
+  }
+
+  .case-process-nav strong,
+  .case-process-nav.case-process-nav-compact strong {
+    font-size: 0.78rem;
+  }
+
+  /* Before/After must stay side-by-side on mobile. */
+  .comparison-table:not(.task-table) {
+    display: block;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border: 1px solid var(--stroke);
+    border-radius: 8px;
+    background: var(--panel);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .comparison-table:not(.task-table)::-webkit-scrollbar {
+    display: none;
+  }
+
+  .comparison-table:not(.task-table) > div,
+  .comparison-table:not(.task-table) > div:first-child,
+  .comparison-table:not(.task-table) > div:not(:first-child) {
+    display: grid;
+    grid-template-columns: minmax(180px, 1fr) minmax(180px, 1fr);
+    gap: 0;
+    min-width: 360px;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    background: transparent;
+  }
+
+  .comparison-table:not(.task-table) > div:first-child {
+    background: var(--panel-muted);
+  }
+
+  .comparison-table:not(.task-table) strong,
+  .comparison-table:not(.task-table) span,
+  .comparison-table:not(.task-table) > div:not(:first-child) span {
+    display: block;
+    padding: 14px;
+    border-right: 1px solid var(--stroke);
+    color: var(--text-muted);
+    line-height: 1.35;
+  }
+
+  .comparison-table:not(.task-table) strong {
+    color: var(--text);
+    font-size: 0.76rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .comparison-table:not(.task-table) strong:last-child,
+  .comparison-table:not(.task-table) span:last-child {
+    border-right: 0;
+  }
+
+  .comparison-table:not(.task-table) > div:not(:first-child) span::before {
+    content: none !important;
+    display: none !important;
+  }
+
+  .comparison-table:not(.task-table) > div + div {
+    border-top: 1px solid var(--stroke);
+  }
+
+  /* Final output carousel: compact, no giant empty panels, no broken slices. */
+  .case-careroute .case-final,
+  .case-careroute .care-phone-carousel {
+    padding: 18px 12px;
+    overflow: hidden;
+  }
+
+  .case-careroute .care-phone-carousel .case-carousel-header {
+    gap: 8px;
+    padding: 0 0 16px;
+    border-bottom: 1px solid var(--stroke);
+    background: transparent;
+  }
+
+  .case-careroute .care-phone-carousel .case-carousel-header p {
+    font-size: 0.95rem;
+    line-height: 1.3;
+  }
+
+  .case-careroute .care-phone-carousel .case-carousel-cue {
+    min-height: 30px;
+    padding-inline: 11px;
+  }
+
+  .case-careroute .care-phone-carousel .case-carousel-viewport {
+    margin-top: 16px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+  }
+
+  .case-careroute .care-phone-carousel .case-carousel-track {
+    gap: 12px;
+    padding: 0;
+    align-items: start;
+  }
+
+  .case-careroute .care-phone-carousel .case-carousel-slide,
+  .case-careroute .care-phone-carousel .case-carousel-cover {
+    flex: 0 0 min(76vw, 315px);
+    max-width: min(76vw, 315px);
+    display: block;
+    overflow: hidden;
+    border: 0;
+    border-radius: 4px;
+    background: transparent;
+  }
+
+  .case-careroute .care-phone-carousel .case-image {
+    width: 100%;
+    height: clamp(175px, 50vw, 245px);
+    max-height: none;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px;
+    background: transparent;
+  }
+
+  .case-careroute .care-phone-carousel .case-carousel-slide figcaption {
+    max-width: 100%;
+    overflow: hidden;
+    padding: 8px 0 0;
+    border: 0;
+    background: transparent;
+    font-size: 0.78rem;
+    line-height: 1.25;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 420px) {
+  .case-process-nav,
+  .case-process-nav.case-process-nav-compact {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .case-process-nav a,
+  .case-process-nav.case-process-nav-compact a {
+    padding: 8px 8px;
+  }
+
+  .case-careroute .care-phone-carousel .case-carousel-slide,
+  .case-careroute .care-phone-carousel .case-carousel-cover {
+    flex-basis: 74vw;
+    max-width: 74vw;
+  }
+}

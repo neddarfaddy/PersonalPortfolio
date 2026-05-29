@@ -18,7 +18,7 @@
 <meta content="#121312" name="theme-color"/>
 <script>
       try {
-        const theme = localStorage.getItem("portfolio-theme") || "default";
+        const theme = localStorage.getItem("portfolio-theme-v16") || "violet";
         const themeBackgrounds = {
           default: "#121312",
           olive: "#11140e",
@@ -34,7 +34,9 @@
           pink: "#f5e5ee",
           acid: "#0b1009",
           ocean: "#09111d",
+          blue: "#050b24",
           violet: "#120d1b",
+          red: "#140407",
           ruby: "#170d10",
           gold: "#171307",
           "teal-light": "#e2f2ef",
@@ -56,7 +58,9 @@
           pink: "#ead1df",
           acid: "#080d07",
           ocean: "#060d16",
+          blue: "#030817",
           violet: "#0e0916",
+          red: "#0d0305",
           ruby: "#10090b",
           gold: "#100d05",
           "teal-light": "#d0e5e0",
@@ -67,9 +71,9 @@
         document.documentElement.style.setProperty("--initial-bg", themeBackgrounds[theme] || "#121312");
         document.documentElement.style.setProperty("--initial-transition-bg", themeTransitionBackgrounds[theme] || "#0e0f0e");
       } catch {
-        document.documentElement.setAttribute("data-theme", "default");
-        document.documentElement.style.setProperty("--initial-bg", "#121312");
-        document.documentElement.style.setProperty("--initial-transition-bg", "#0e0f0e");
+        document.documentElement.setAttribute("data-theme", "violet");
+        document.documentElement.style.setProperty("--initial-bg", "#120d1b");
+        document.documentElement.style.setProperty("--initial-transition-bg", "#0e0916");
       }
     </script>
 <style>
