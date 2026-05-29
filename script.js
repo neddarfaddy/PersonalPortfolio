@@ -44,7 +44,57 @@ const mediaLightboxCaption = document.querySelector("[data-media-caption]");
 const mediaCloseButtons = document.querySelectorAll("[data-media-close]");
 const gsapScript = document.querySelector("[data-gsap]");
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-const THEME_STORAGE_KEY = "portfolio-theme-v17";
+const THEME_STORAGE_KEY = "portfolio-theme-v18";
+const OLD_THEME_STORAGE_KEYS = ["portfolio-theme", "portfolio-theme-v16", "portfolio-theme-v17"];
+const THEME_BACKGROUNDS = {
+  default: "#121312",
+  olive: "#10140f",
+  cyan: "#0f1212",
+  wine: "#150f11",
+  ember: "#14110e",
+  plum: "#131015",
+  mono: "#0d0d0d",
+  paper: "#eeeae2",
+  "mint-light": "#e9f0e8",
+  "sky-light": "#e8eef0",
+  "blush-light": "#f0e9e9",
+  pink: "#f5e5ee",
+  acid: "#0b1009",
+  ocean: "#09111d",
+  blue: "#050b24",
+  violet: "#120d1b",
+  red: "#140407",
+  ruby: "#170d10",
+  gold: "#171307",
+  "teal-light": "#e2f2ef",
+  "lilac-light": "#eee9f6",
+  "citrus-light": "#f4f1df",
+};
+const THEME_TRANSITION_BACKGROUNDS = {
+  default: "#0e0f0e",
+  olive: "#0c100b",
+  cyan: "#0b1010",
+  wine: "#100b0d",
+  ember: "#100d0a",
+  plum: "#0f0c11",
+  mono: "#050505",
+  paper: "#ded9cf",
+  "mint-light": "#d9e2d7",
+  "sky-light": "#d7e2e6",
+  "blush-light": "#e2d6d8",
+  pink: "#ead1df",
+  acid: "#080d07",
+  ocean: "#060d16",
+  blue: "#030817",
+  violet: "#0e0916",
+  red: "#0d0305",
+  ruby: "#10090b",
+  gold: "#100d05",
+  "teal-light": "#d0e5e0",
+  "lilac-light": "#ddd5ea",
+  "citrus-light": "#e5dec0",
+};
+const LIGHT_THEMES = new Set(["paper", "mint-light", "sky-light", "blush-light", "pink", "teal-light", "lilac-light", "citrus-light"]);
 const extraThemes = [
   { value: "acid", label: "Acid", swatch: "swatch-acid" },
   { value: "blue", label: "Blue", swatch: "swatch-blue" },
@@ -833,7 +883,31 @@ projectCards.forEach((card) => {
 
 function setTheme(theme) {
   const themeValue = theme || "violet";
-  document.documentElement.setAttribute("data-theme", themeValue);
+  const root = document.documentElement;
+  const body = document.body;
+  const background = THEME_BACKGROUNDS[themeValue] || THEME_BACKGROUNDS.violet;
+  const transitionBackground = THEME_TRANSITION_BACKGROUNDS[themeValue] || THEME_TRANSITION_BACKGROUNDS.violet;
+
+  root.setAttribute("data-theme", themeValue);
+  root.style.setProperty("--initial-bg", background);
+  root.style.setProperty("--initial-transition-bg", transitionBackground);
+  root.style.backgroundColor = background;
+  root.style.colorScheme = LIGHT_THEMES.has(themeValue) ? "light" : "dark";
+
+  if (body) {
+    body.setAttribute("data-theme", themeValue);
+    body.style.backgroundColor = background;
+    body.style.colorScheme = LIGHT_THEMES.has(themeValue) ? "light" : "dark";
+  }
+
+  document.querySelector('meta[name="theme-color"]')?.setAttribute("content", background);
+  document.querySelector(".page-transition")?.style.setProperty("background", transitionBackground);
+
+  document.querySelectorAll(".background-waves span").forEach((wave) => {
+    wave.style.animationName = "none";
+    void wave.offsetHeight;
+    wave.style.animationName = "diagonal-slide";
+  });
 
   themeOptions.forEach((option) => {
     option.classList.toggle("is-active", option.dataset.themeValue === themeValue);
@@ -841,6 +915,7 @@ function setTheme(theme) {
 
   try {
     window.localStorage.setItem(THEME_STORAGE_KEY, themeValue);
+    OLD_THEME_STORAGE_KEYS.forEach((key) => window.localStorage.removeItem(key));
   } catch {
     return;
   }
