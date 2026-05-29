@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en" data-theme="violet">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Selected Work | Fady Neddar - Product UI/UX Portfolio</title>
+    <meta
+      name="description"
+      content="Selected UI/UX work by Fady Neddar, covering product interfaces, booking flows, UX audits, forms, filters, and complex systems."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Fady Neddar - Product UI/UX Portfolio" />
+    <meta
+      property="og:description"
+      content="Selected UI/UX work covering product interfaces, booking flows, UX audits, forms, filters, and complex systems."
+    />
+    <meta property="og:image" content="./imgs/social-preview.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Fady Neddar - Product UI/UX Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Selected UI/UX work covering product interfaces, booking flows, UX audits, forms, filters, and complex systems."
+    />
+    <meta name="twitter:image" content="./imgs/social-preview.png" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#121312" />
+    <script>
+      try {
+        const theme = localStorage.getItem("portfolio-theme") || "default";
+        const themeBackgrounds = {
+          default: "#121312",
+          olive: "#11140e",
+          cyan: "#101618",
+          wine: "#170f12",
+          ember: "#17110d",
+          plum: "#141018",
+          mono: "#111111",
+          paper: "#f3efe8",
+          "mint-light": "#e9f0e8",
+          "sky-light": "#e8eef0",
+          "blush-light": "#f0e9e9",
+          pink: "#f5e5ee",
+          acid: "#0b1009",
+          ocean: "#09111d",
+          violet: "#120d1b",
+          ruby: "#170d10",
+          gold: "#171307",
+          "teal-light": "#e2f2ef",
+          "lilac-light": "#eee9f6",
+          "citrus-light": "#f4f1df"
+        };
+        const themeTransitionBackgrounds = {
+          default: "#0e0f0e",
+          olive: "#0c100b",
+          cyan: "#0b1010",
+          wine: "#100b0d",
+          ember: "#100d0a",
+          plum: "#0f0c11",
+          mono: "#050505",
+          paper: "#ded9cf",
+          "mint-light": "#d9e2d7",
+          "sky-light": "#d7e2e6",
+          "blush-light": "#e2d6d8",
+          pink: "#ead1df",
+          acid: "#080d07",
+          ocean: "#060d16",
+          violet: "#0e0916",
+          ruby: "#10090b",
+          gold: "#100d05",
+          "teal-light": "#d0e5e0",
+          "lilac-light": "#ddd5ea",
+          "citrus-light": "#e5dec0"
+        };
+        document.documentElement.setAttribute("data-theme", theme);
+        document.documentElement.style.setProperty("--initial-bg", themeBackgrounds[theme] || "#121312");
+        document.documentElement.style.setProperty("--initial-transition-bg", themeTransitionBackgrounds[theme] || "#0e0f0e");
+      } catch {
+        document.documentElement.setAttribute("data-theme", "default");
+        document.documentElement.style.setProperty("--initial-bg", "#121312");
+        document.documentElement.style.setProperty("--initial-transition-bg", "#0e0f0e");
+      }
+    </script>
+    <style>
+      html,
+      body {
+        min-height: 100%;
+        margin: 0;
+        background: var(--initial-bg, #121312);
+        color: #f1f1f1;
+        color-scheme: dark;
+      }
+
+      body {
+        min-height: 100vh;
+      }
+
+      .page-transition {
+        position: fixed;
+        inset: 0;
+        z-index: 500;
+        pointer-events: none;
+        background: var(--initial-transition-bg, var(--initial-bg, #121312));
+      }
+    </style>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-transition" aria-hidden="true"></div>
+    <div class="background-waves" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <header class="site-header" aria-label="Primary navigation">
+      <nav class="nav-shell">
+        <div class="nav-left">
+          <a class="brand" href="./index.html" aria-label="Fady Neddar home">
+            <span>Fady Neddar</span>
+          </a>
+          <span class="divider" aria-hidden="true">|</span>
+          <a href="./work.html" aria-current="page">Work</a>
+          <span class="divider" aria-hidden="true">|</span>
+          <a href="./index.html#approach">Approach</a>
+          <span class="divider" aria-hidden="true">|</span>
+          <a href="./about.html">About</a>
+        </div>
+        <button
+          class="mobile-menu-toggle"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          data-mobile-menu-toggle
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+        <button class="button button-light nav-cta" type="button" data-contact-open>
+          <span class="icon-arrow" aria-hidden="true"></span>
+          <span>Let's Work Together</span>
+        </button>
+        <div class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true">
+          <a href="./work.html" aria-current="page">Work</a>
+          <a href="./index.html#approach">Approach</a>
+          <a href="./about.html">About</a>
+          <button class="button button-light" type="button" data-contact-open>
+            <span class="icon-arrow" aria-hidden="true"></span>
+            <span>Let's Work Together</span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top" class="work-page">
+      <section class="work-index" id="work" aria-labelledby="work-index-title">
+        <div class="work-index-heading">
+          <p>Work</p>
+          <h1 id="work-index-title">Selected UI/UX work for complex flows, audits, and decision-heavy interfaces.</h1>
+        </div>
+
+        <div class="work-stack">
+          <a class="work-index-card" href="./careroute.html" aria-label="View CareRoute case study">
+            <div class="work-card-top">
+              <div>
+                <span class="work-card-count">(001)</span>
+                <h2>CareRoute</h2>
+              </div>
+              <span class="work-card-action">
+                <span class="icon-arrow" aria-hidden="true"></span>
+                <span>View The Case Study</span>
+              </span>
+            </div>
+            <div class="work-card-tags" aria-label="Project tags">
+              <span>Product UX</span>
+              <span>Mobile booking flow</span>
+              <span>Healthcare routing</span>
+              <span>Doctor comparison</span>
+            </div>
+            <p>
+              Routes users from symptoms to a suitable care type, then helps them compare doctors
+              and book an appointment.
+            </p>
+            <div class="work-card-images work-card-care" aria-hidden="true">
+              <div class="work-card-track">
+                <img src="./imgs/careroute-welcome.webp" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/careroute-feed.webp" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/careroute-symptom-input.webp" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/careroute-symptom-duration.webp" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/careroute-result.webp" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/careroute-more-doctors.webp" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/careroute-doctor-time-booking.webp" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/careroute-appointment-confirmed.webp" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/careroute-bookings-upcoming.webp" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/careroute-welcome.webp" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/careroute-feed.webp" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/careroute-symptom-input.webp" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/careroute-symptom-duration.webp" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/careroute-result.webp" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/careroute-more-doctors.webp" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/careroute-doctor-time-booking.webp" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/careroute-appointment-confirmed.webp" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/careroute-bookings-upcoming.webp" alt="" loading="lazy" decoding="async" />
+              </div>
+            </div>
+          </a>
+
+          <a class="work-index-card" href="./marathon.html" aria-label="View Marathon UX Audit and UI Redesign case study">
+            <div class="work-card-top">
+              <div>
+                <span class="work-card-count">(002)</span>
+                <h2>Marathon UX Audit & UI Redesign</h2>
+              </div>
+              <span class="work-card-action">
+                <span class="icon-arrow" aria-hidden="true"></span>
+                <span>View The Case Study</span>
+              </span>
+            </div>
+            <div class="work-card-tags" aria-label="Project tags">
+              <span>UX Audit</span>
+              <span>Interface redesign</span>
+              <span>Menu friction</span>
+              <span>Pre-match flow</span>
+            </div>
+            <p>
+              Reduces menu friction across navigation, loadout setup, item comparison, and
+              pre-match decisions.
+            </p>
+            <div class="work-card-images" aria-hidden="true">
+              <div class="work-card-track">
+                <img src="./imgs/marathon-after-mainmenu-900.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/marathon-after-inventory-900.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/marathon-compare-900.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/marathon-shellselect-900.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/marathon-shellcust-900.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/marathon-mm-mapinfo-900.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/marathon-mm-party-900.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/marathon-after-mainmenu-900.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/marathon-after-inventory-900.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/marathon-compare-900.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/marathon-shellselect-900.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/marathon-shellcust-900.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/marathon-mm-mapinfo-900.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/marathon-mm-party-900.jpg" alt="" loading="lazy" decoding="async" />
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="work-index-card"
+            href="./elderscrolls.html"
+            aria-label="View The Elder Scrolls VI Interface Concept case study"
+          >
+            <div class="work-card-top">
+              <div>
+                <span class="work-card-count">(003)</span>
+                <h2>The Elder Scrolls VI Interface Concept</h2>
+              </div>
+              <span class="work-card-action">
+                <span class="icon-arrow" aria-hidden="true"></span>
+                <span>View The Case Study</span>
+              </span>
+            </div>
+            <div class="work-card-tags" aria-label="Project tags">
+              <span>Complex interface concept</span>
+              <span>RPG Systems</span>
+              <span>Information architecture</span>
+              <span>HUD hierarchy</span>
+            </div>
+            <p>
+              Explores inventory, quests, map, HUD, and system hierarchy for a large RPG interface.
+            </p>
+            <div class="work-card-images" aria-hidden="true">
+              <div class="work-card-track">
+                <img src="./imgs/es-mainmenu-press-900.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/es-pause-system-900.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/es-inventory-900.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/es-character-900.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/es-skills-900.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/es-map-900.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/es-mainmenu-press-900.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/es-pause-system-900.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/es-inventory-900.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/es-character-900.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/es-skills-900.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="./imgs/es-map-900.jpg" alt="" loading="lazy" decoding="async" />
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="footer-top">
+        <p>Fady Neddar</p>
+        <div class="footer-link-stack">
+          <nav class="social-links footer-socials" aria-label="Social links">
+            <a href="https://www.linkedin.com/in/fady-neddar-0b409b3a3/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/neddarfaddy" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.youtube.com/@Shaheen602" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://www.artstation.com/shahin31" target="_blank" rel="noopener noreferrer">ArtStation</a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="footer-middle">
+        <div>
+          <p>
+            <span>(Online)</span>
+            <span id="footer-time">Now, --:--:-- GMT+1</span>
+          </p>
+        </div>
+        <address>
+          <span>Based in</span>
+          <span>Oran, Algeria</span>
+        </address>
+      </div>
+
+      <p class="footer-wordmark">Fady Neddar</p>
+    </footer>
+
+    <div class="contact-drawer-shell" id="contact-drawer" aria-hidden="true" inert>
+      <button class="contact-backdrop" type="button" data-contact-close aria-label="Close contact form"></button>
+      <aside class="contact-drawer" role="dialog" aria-modal="true" aria-labelledby="contact-title" tabindex="-1">
+        <button class="drawer-close" type="button" data-contact-close aria-label="Close contact form">x</button>
+
+        <div class="drawer-intro">
+          <p>Contact</p>
+          <h2 id="contact-title">Let's Work Together</h2>
+          <p>
+            Got a role, project, or just want to chat about design? Fill in the form and I'll get
+            back to you soon.
+          </p>
+        </div>
+
+        <nav class="social-links drawer-socials" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/fady-neddar-0b409b3a3/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/neddarfaddy" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.youtube.com/@Shaheen602" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="https://www.artstation.com/shahin31" target="_blank" rel="noopener noreferrer">ArtStation</a>
+        </nav>
+
+        <form class="contact-form" id="contact-form" action="https://formsubmit.co/fadyneddar@gmail.com" method="POST">
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_subject" value="Portfolio enquiry from Fady Neddar portfolio" />
+          <input class="form-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <div class="form-row">
+            <label>
+              <span>First Name <em>*</em></span>
+              <input type="text" name="firstName" placeholder="First name" required />
+            </label>
+            <label>
+              <span>Last Name <em>*</em></span>
+              <input type="text" name="lastName" placeholder="Last name" required />
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              <span>Email Address <em>*</em></span>
+              <input type="email" name="email" placeholder="email@company.com" required />
+            </label>
+            <label>
+              <span>Phone Number</span>
+              <input type="tel" name="phone" placeholder="07000-000000" />
+            </label>
+          </div>
+
+          <label>
+            <span>Enquiry Type <em>*</em></span>
+            <select name="enquiryType" required>
+              <option value="">Select one...</option>
+              <option>Product design</option>
+              <option>Interface redesign</option>
+              <option>UX audit</option>
+              <option>Front-end prototype</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Message <em>*</em></span>
+            <textarea name="message" placeholder="Your message" required></textarea>
+          </label>
+          <p class="form-status" data-form-status aria-live="polite"></p>
+<button class="button button-light send-button" type="submit">
+            <span class="icon-arrow" aria-hidden="true"></span>
+            <span>Send Message</span>
+          </button>
+        </form>
+      </aside>
+    </div>
+
+    <div class="theme-picker" data-theme-picker>
+      <div class="theme-menu" id="theme-menu" aria-hidden="true">
+        <button class="theme-option" type="button" data-theme-value="default"><span class="theme-swatch swatch-default" aria-hidden="true"></span><span>Default</span></button>
+        <button class="theme-option" type="button" data-theme-value="olive"><span class="theme-swatch swatch-olive" aria-hidden="true"></span><span>Olive</span></button>
+        <button class="theme-option" type="button" data-theme-value="cyan"><span class="theme-swatch swatch-cyan" aria-hidden="true"></span><span>Cyan</span></button>
+        <button class="theme-option" type="button" data-theme-value="wine"><span class="theme-swatch swatch-wine" aria-hidden="true"></span><span>Wine</span></button>
+        <button class="theme-option" type="button" data-theme-value="ember"><span class="theme-swatch swatch-ember" aria-hidden="true"></span><span>Ember</span></button>
+        <button class="theme-option" type="button" data-theme-value="plum"><span class="theme-swatch swatch-plum" aria-hidden="true"></span><span>Plum</span></button>
+        <button class="theme-option" type="button" data-theme-value="mono"><span class="theme-swatch swatch-mono" aria-hidden="true"></span><span>Mono</span></button>
+        <button class="theme-option" type="button" data-theme-value="paper"><span class="theme-swatch swatch-paper" aria-hidden="true"></span><span>Paper</span></button>
+        <button class="theme-option" type="button" data-theme-value="mint-light"><span class="theme-swatch swatch-mint-light" aria-hidden="true"></span><span>Mint</span></button>
+        <button class="theme-option" type="button" data-theme-value="sky-light"><span class="theme-swatch swatch-sky-light" aria-hidden="true"></span><span>Sky</span></button>
+        <button class="theme-option" type="button" data-theme-value="blush-light"><span class="theme-swatch swatch-blush-light" aria-hidden="true"></span><span>Blush</span></button>
+        <button class="theme-option" type="button" data-theme-value="pink"><span class="theme-swatch swatch-pink" aria-hidden="true"></span><span>Pink</span></button>
+      </div>
+      <button
+        class="theme-toggle"
+        type="button"
+        aria-label="Choose color theme"
+        aria-expanded="false"
+        aria-controls="theme-menu"
+        data-theme-toggle
+      >
+        <span class="theme-toggle-mark" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <script data-gsap src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

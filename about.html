@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en" data-theme="violet">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About | Fady Neddar - UI/UX Designer</title>
+    <meta
+      name="description"
+      content="About Fady Neddar, a UI/UX designer focused on complex products, dashboards, booking flows, UX audits, prototypes, and interaction-heavy interfaces."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="About Fady Neddar - UI/UX Designer" />
+    <meta
+      property="og:description"
+      content="UI/UX designer focused on complex products, dashboards, booking flows, UX audits, prototypes, and interaction-heavy interfaces."
+    />
+    <meta property="og:image" content="./imgs/social-preview.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About Fady Neddar - UI/UX Designer" />
+    <meta
+      name="twitter:description"
+      content="UI/UX designer focused on complex products, dashboards, booking flows, UX audits, prototypes, and interaction-heavy interfaces."
+    />
+    <meta name="twitter:image" content="./imgs/social-preview.png" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#121312" />
+    <script>
+      try {
+        const theme = localStorage.getItem("portfolio-theme") || "default";
+        const themeBackgrounds = {
+          default: "#121312",
+          olive: "#11140e",
+          cyan: "#101618",
+          wine: "#170f12",
+          ember: "#17110d",
+          plum: "#141018",
+          mono: "#111111",
+          paper: "#f3efe8",
+          "mint-light": "#e9f0e8",
+          "sky-light": "#e8eef0",
+          "blush-light": "#f0e9e9",
+          pink: "#f5e5ee",
+          acid: "#0b1009",
+          ocean: "#09111d",
+          violet: "#120d1b",
+          ruby: "#170d10",
+          gold: "#171307",
+          "teal-light": "#e2f2ef",
+          "lilac-light": "#eee9f6",
+          "citrus-light": "#f4f1df"
+        };
+        const themeTransitionBackgrounds = {
+          default: "#0e0f0e",
+          olive: "#0c100b",
+          cyan: "#0b1010",
+          wine: "#100b0d",
+          ember: "#100d0a",
+          plum: "#0f0c11",
+          mono: "#050505",
+          paper: "#ded9cf",
+          "mint-light": "#d9e2d7",
+          "sky-light": "#d7e2e6",
+          "blush-light": "#e2d6d8",
+          pink: "#ead1df",
+          acid: "#080d07",
+          ocean: "#060d16",
+          violet: "#0e0916",
+          ruby: "#10090b",
+          gold: "#100d05",
+          "teal-light": "#d0e5e0",
+          "lilac-light": "#ddd5ea",
+          "citrus-light": "#e5dec0"
+        };
+        document.documentElement.setAttribute("data-theme", theme);
+        document.documentElement.style.setProperty("--initial-bg", themeBackgrounds[theme] || "#121312");
+        document.documentElement.style.setProperty("--initial-transition-bg", themeTransitionBackgrounds[theme] || "#0e0f0e");
+      } catch {
+        document.documentElement.setAttribute("data-theme", "default");
+        document.documentElement.style.setProperty("--initial-bg", "#121312");
+        document.documentElement.style.setProperty("--initial-transition-bg", "#0e0f0e");
+      }
+    </script>
+    <style>
+      html,
+      body {
+        min-height: 100%;
+        margin: 0;
+        background: var(--initial-bg, #121312);
+        color: #f1f1f1;
+        color-scheme: dark;
+      }
+
+      body {
+        min-height: 100vh;
+      }
+
+      .page-transition {
+        position: fixed;
+        inset: 0;
+        z-index: 500;
+        pointer-events: none;
+        background: var(--initial-transition-bg, var(--initial-bg, #121312));
+      }
+    </style>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-transition" aria-hidden="true"></div>
+    <div class="background-waves" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <header class="site-header" aria-label="Primary navigation">
+      <nav class="nav-shell">
+        <div class="nav-left">
+          <a class="brand" href="./index.html" aria-label="Fady Neddar home">
+            <span>Fady Neddar</span>
+          </a>
+          <span class="divider" aria-hidden="true">|</span>
+          <a href="./work.html">Work</a>
+          <span class="divider" aria-hidden="true">|</span>
+          <a href="./index.html#approach">Approach</a>
+          <span class="divider" aria-hidden="true">|</span>
+          <a href="./about.html" aria-current="page">About</a>
+        </div>
+        <button
+          class="mobile-menu-toggle"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          data-mobile-menu-toggle
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+        <button class="button button-light nav-cta" type="button" data-contact-open>
+          <span class="icon-arrow" aria-hidden="true"></span>
+          <span>Let's Work Together</span>
+        </button>
+        <div class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true">
+          <a href="./work.html">Work</a>
+          <a href="./index.html#approach">Approach</a>
+          <a href="./about.html" aria-current="page">About</a>
+          <button class="button button-light" type="button" data-contact-open>
+            <span class="icon-arrow" aria-hidden="true"></span>
+            <span>Let's Work Together</span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top" class="about-page about-page-upgraded">
+      <section class="about-hero" aria-labelledby="about-title">
+        <div class="about-copy">
+          <p class="about-kicker">About</p>
+          <h1 id="about-title">I design interfaces for complex flows, dense screens, and decision-heavy products.</h1>
+          <p>
+            I’m Fady Neddar, a UI/UX designer focused on products where users need to compare, book, configure, filter, or act without getting lost.
+          </p>
+          <p>
+            My strength is turning messy decision-making into structured screens: clear hierarchy, visible next steps, useful states, and polished visual systems.
+          </p>
+          <div class="proof-strip compact" aria-label="Core focus">
+            <span>UX audits</span>
+            <span>Booking flows</span>
+            <span>Game UI</span>
+            <span>Dense dashboards</span>
+            <span>Front-end-aware design</span>
+          </div>
+        </div>
+
+        <figure class="about-portrait">
+          <img src="./imgs/fady-neddar-portrait.webp" alt="Portrait of Fady Neddar" fetchpriority="high" decoding="async" />
+          <figcaption>
+            <strong>Fady Neddar</strong><br />
+            UI/UX designer focused on complex flows, dense interfaces, and sharp visual systems.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="about-panel about-cv" aria-labelledby="positioning-title">
+        <div>
+          <p class="about-kicker">Positioning</p>
+          <h2 id="positioning-title">The type of designer I’m becoming</h2>
+          <p>
+            I’m aiming for junior to mid-level UI/UX roles where interface structure matters: SaaS tools, booking products, admin systems, dashboards, and game-adjacent interfaces.
+          </p>
+        </div>
+        <div class="about-actions">
+          <a class="button button-light" href="mailto:fadyneddar@gmail.com?subject=Portfolio%20conversation">
+            <span class="icon-arrow" aria-hidden="true"></span>
+            <span>Contact Me</span>
+          </a>
+          <a class="button button-dark" href="./work.html">
+            <span class="icon-arrow" aria-hidden="true"></span>
+            <span>View Work</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="about-panel" aria-labelledby="focus-title">
+        <div>
+          <p class="about-kicker">Design strengths</p>
+          <h2 id="focus-title">What I’m good at</h2>
+        </div>
+        <div class="about-focus-grid">
+          <article>
+            <span>01</span>
+            <h3>Auditing confusing flows</h3>
+            <p>Finding where users lose context, repeat steps, or rely on memory instead of visible information.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Structuring dense screens</h3>
+            <p>Using hierarchy, grouping, spacing, and states to make complex interfaces easier to scan.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Designing decision points</h3>
+            <p>Making comparison, confirmation, warnings, and next actions visible at the moment users need them.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Polishing visual systems</h3>
+            <p>Creating screens that look sharp without hiding the actual product logic underneath.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="about-panel" aria-labelledby="process-title">
+        <div>
+          <p class="about-kicker">Process</p>
+          <h2 id="process-title">How I usually work</h2>
+        </div>
+        <ol class="process-list" aria-label="Design process">
+          <li><strong>Map the task.</strong><span>What is the user trying to decide, compare, or complete?</span></li>
+          <li><strong>Find the friction.</strong><span>Where does the flow force extra clicks, memory work, or uncertainty?</span></li>
+          <li><strong>Restructure the screen.</strong><span>Group actions by intent, not by what looks convenient on the canvas.</span></li>
+          <li><strong>Design the states.</strong><span>Empty, loading, error, confirmation, destructive actions, and after-action screens.</span></li>
+          <li><strong>Prototype and refine.</strong><span>Test whether the next step is obvious before adding more polish.</span></li>
+        </ol>
+      </section>
+
+      <section class="about-panel" aria-labelledby="credibility-title">
+        <div>
+          <p class="about-kicker">Tools & methods</p>
+          <h2 id="credibility-title">What I use</h2>
+        </div>
+        <ul class="skill-chip-list" aria-label="Skills and tools">
+          <li>Figma</li>
+          <li>UX audits</li>
+          <li>User flows</li>
+          <li>Wireframes</li>
+          <li>High-fidelity UI</li>
+          <li>Prototypes</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript basics</li>
+          <li>GSAP-style motion thinking</li>
+          <li>Responsive design</li>
+          <li>Accessibility basics</li>
+        </ul>
+      </section>
+
+      <section class="about-panel about-links" aria-labelledby="links-title">
+        <div>
+          <p class="about-kicker">Links</p>
+          <h2 id="links-title">Find me here</h2>
+        </div>
+        <nav class="social-links" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/fady-neddar-0b409b3a3/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/neddarfaddy" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.youtube.com/@Shaheen602" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="https://www.artstation.com/shahin31" target="_blank" rel="noopener noreferrer">ArtStation</a>
+        </nav>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="footer-top">
+        <p>Fady Neddar</p>
+        <div class="footer-link-stack">
+          <nav class="social-links footer-socials" aria-label="Social links">
+            <a href="https://www.linkedin.com/in/fady-neddar-0b409b3a3/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/neddarfaddy" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.youtube.com/@Shaheen602" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://www.artstation.com/shahin31" target="_blank" rel="noopener noreferrer">ArtStation</a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="footer-middle">
+        <div>
+          <p>
+            <span>(Online)</span>
+            <span id="footer-time">Now, --:--:-- GMT+1</span>
+          </p>
+        </div>
+        <address>
+          <span>Based in</span>
+          <span>Oran, Algeria</span>
+        </address>
+      </div>
+
+      <p class="footer-wordmark">Fady Neddar</p>
+    </footer>
+
+    <div class="contact-drawer-shell" id="contact-drawer" aria-hidden="true" inert>
+      <button class="contact-backdrop" type="button" data-contact-close aria-label="Close contact form"></button>
+      <aside class="contact-drawer" role="dialog" aria-modal="true" aria-labelledby="contact-title" tabindex="-1">
+        <button class="drawer-close" type="button" data-contact-close aria-label="Close contact form">x</button>
+
+        <div class="drawer-intro">
+          <p>Contact</p>
+          <h2 id="contact-title">Let's Work Together</h2>
+          <p>Got a role, project, or design audit in mind? Send a short message and I'll reply soon.</p>
+        </div>
+
+        <nav class="social-links drawer-socials" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/fady-neddar-0b409b3a3/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/neddarfaddy" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.youtube.com/@Shaheen602" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="https://www.artstation.com/shahin31" target="_blank" rel="noopener noreferrer">ArtStation</a>
+        </nav>
+
+        <form class="contact-form" id="contact-form" action="https://formsubmit.co/fadyneddar@gmail.com" method="POST">
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_subject" value="Portfolio enquiry from Fady Neddar portfolio" />
+          <input class="form-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <div class="form-row">
+            <label><span>First Name <em>*</em></span><input type="text" name="firstName" placeholder="First name" required /></label>
+            <label><span>Last Name <em>*</em></span><input type="text" name="lastName" placeholder="Last name" required /></label>
+          </div>
+          <label><span>Email Address <em>*</em></span><input type="email" name="email" placeholder="email@company.com" required /></label>
+          <label><span>Message <em>*</em></span><textarea name="message" placeholder="Your message" required></textarea></label>
+          <p class="form-status" data-form-status aria-live="polite"></p>
+          <button class="button button-light send-button" type="submit"><span class="icon-arrow" aria-hidden="true"></span><span>Send Message</span></button>
+        </form>
+      </aside>
+    </div>
+
+    <div class="theme-picker" data-theme-picker>
+      <div class="theme-menu" id="theme-menu" aria-hidden="true">
+        <button class="theme-option" type="button" data-theme-value="default"><span class="theme-swatch swatch-default" aria-hidden="true"></span><span>Default</span></button>
+        <button class="theme-option" type="button" data-theme-value="olive"><span class="theme-swatch swatch-olive" aria-hidden="true"></span><span>Olive</span></button>
+        <button class="theme-option" type="button" data-theme-value="cyan"><span class="theme-swatch swatch-cyan" aria-hidden="true"></span><span>Cyan</span></button>
+        <button class="theme-option" type="button" data-theme-value="wine"><span class="theme-swatch swatch-wine" aria-hidden="true"></span><span>Wine</span></button>
+        <button class="theme-option" type="button" data-theme-value="ember"><span class="theme-swatch swatch-ember" aria-hidden="true"></span><span>Ember</span></button>
+        <button class="theme-option" type="button" data-theme-value="plum"><span class="theme-swatch swatch-plum" aria-hidden="true"></span><span>Plum</span></button>
+        <button class="theme-option" type="button" data-theme-value="mono"><span class="theme-swatch swatch-mono" aria-hidden="true"></span><span>Mono</span></button>
+        <button class="theme-option" type="button" data-theme-value="paper"><span class="theme-swatch swatch-paper" aria-hidden="true"></span><span>Paper</span></button>
+        <button class="theme-option" type="button" data-theme-value="mint-light"><span class="theme-swatch swatch-mint-light" aria-hidden="true"></span><span>Mint</span></button>
+        <button class="theme-option" type="button" data-theme-value="sky-light"><span class="theme-swatch swatch-sky-light" aria-hidden="true"></span><span>Sky</span></button>
+        <button class="theme-option" type="button" data-theme-value="blush-light"><span class="theme-swatch swatch-blush-light" aria-hidden="true"></span><span>Blush</span></button>
+        <button class="theme-option" type="button" data-theme-value="pink"><span class="theme-swatch swatch-pink" aria-hidden="true"></span><span>Pink</span></button>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="Choose color theme" aria-expanded="false" aria-controls="theme-menu" data-theme-toggle>
+        <span class="theme-toggle-mark" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <script data-gsap src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+
+<html lang="en" data-theme="violet">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>CareRoute Case Study | Fady Neddar - UI/UX Designer</title>
+<meta content="CareRoute healthcare booking app case study by Fady Neddar, focused on symptom guidance, care routing, doctor comparison, and booking clarity." name="description"/>
+<meta content="article" property="og:type"/>
+<meta content="CareRoute Case Study - Fady Neddar" property="og:title"/>
+<meta content="Healthcare booking app design focused on symptom guidance, care routing, doctor comparison, and booking clarity." property="og:description"/>
+<meta content="./imgs/social-preview.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="CareRoute Case Study - Fady Neddar" name="twitter:title"/>
+<meta content="Healthcare booking app design focused on symptom guidance, care routing, doctor comparison, and booking clarity." name="twitter:description"/>
+<meta content="./imgs/social-preview.png" name="twitter:image"/>
+<link href="./favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="#121312" name="theme-color"/>
+<script>
+      try {
+        const theme = localStorage.getItem("portfolio-theme") || "default";
+        const themeBackgrounds = {
+          default: "#121312",
+          olive: "#11140e",
+          cyan: "#101618",
+          wine: "#170f12",
+          ember: "#17110d",
+          plum: "#141018",
+          mono: "#111111",
+          paper: "#f3efe8",
+          "mint-light": "#e9f0e8",
+          "sky-light": "#e8eef0",
+          "blush-light": "#f0e9e9",
+          pink: "#f5e5ee",
+          acid: "#0b1009",
+          ocean: "#09111d",
+          violet: "#120d1b",
+          ruby: "#170d10",
+          gold: "#171307",
+          "teal-light": "#e2f2ef",
+          "lilac-light": "#eee9f6",
+          "citrus-light": "#f4f1df"
+        };
+        const themeTransitionBackgrounds = {
+          default: "#0e0f0e",
+          olive: "#0c100b",
+          cyan: "#0b1010",
+          wine: "#100b0d",
+          ember: "#100d0a",
+          plum: "#0f0c11",
+          mono: "#050505",
+          paper: "#ded9cf",
+          "mint-light": "#d9e2d7",
+          "sky-light": "#d7e2e6",
+          "blush-light": "#e2d6d8",
+          pink: "#ead1df",
+          acid: "#080d07",
+          ocean: "#060d16",
+          violet: "#0e0916",
+          ruby: "#10090b",
+          gold: "#100d05",
+          "teal-light": "#d0e5e0",
+          "lilac-light": "#ddd5ea",
+          "citrus-light": "#e5dec0"
+        };
+        document.documentElement.setAttribute("data-theme", theme);
+        document.documentElement.style.setProperty("--initial-bg", themeBackgrounds[theme] || "#121312");
+        document.documentElement.style.setProperty("--initial-transition-bg", themeTransitionBackgrounds[theme] || "#0e0f0e");
+      } catch {
+        document.documentElement.setAttribute("data-theme", "default");
+        document.documentElement.style.setProperty("--initial-bg", "#121312");
+        document.documentElement.style.setProperty("--initial-transition-bg", "#0e0f0e");
+      }
+    </script>
+<style>
+      html,
+      body {
+        min-height: 100%;
+        margin: 0;
+        background: var(--initial-bg, #121312);
+        color: #f1f1f1;
+        color-scheme: dark;
+      }
+
+      body {
+        min-height: 100vh;
+      }
+
+      .page-transition {
+        position: fixed;
+        inset: 0;
+        z-index: 500;
+        pointer-events: none;
+        background: var(--initial-transition-bg, var(--initial-bg, #121312));
+      }
+
+    </style>
+<link href="./styles.css" rel="stylesheet"/>
+</head>
+<body class="case-study-body">
+<div aria-hidden="true" class="page-transition"></div>
+<div aria-hidden="true" class="background-waves">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<header aria-label="Primary navigation" class="site-header">
+<nav class="nav-shell">
+<div class="nav-left">
+<a aria-label="Fady Neddar home" class="brand" href="./index.html">
+<span>Fady Neddar</span>
+</a>
+<span aria-hidden="true" class="divider">|</span>
+<a href="./work.html">Work</a>
+<span aria-hidden="true" class="divider">|</span>
+<a href="./index.html#approach">Approach</a>
+<span aria-hidden="true" class="divider">|</span>
+<a href="./about.html">About</a>
+</div>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu" class="mobile-menu-toggle" data-mobile-menu-toggle="" type="button">
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+</button>
+<button class="button button-light nav-cta" data-contact-open="" type="button">
+<span aria-hidden="true" class="icon-arrow"></span>
+<span>Let's Work Together</span>
+</button>
+<div aria-hidden="true" class="mobile-menu" data-mobile-menu="" id="mobile-menu">
+<a href="./work.html">Work</a>
+<a href="./index.html#approach">Approach</a>
+<a href="./about.html">About</a>
+<button class="button button-light" data-contact-open="" type="button">
+<span aria-hidden="true" class="icon-arrow"></span>
+<span>Let's Work Together</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="case-page case-careroute" id="top">
+<section aria-labelledby="case-title" class="case-shell case-hero">
+<div class="case-hero-grid">
+<div>
+<h1 class="case-title" id="case-title">CareRoute</h1>
+<p class="case-kicker">Product UX / mobile booking flow</p>
+<div aria-label="Project details" class="case-meta-row">
+<span class="case-pill">Health App</span>
+<span class="case-pill">Booking Flow</span>
+<span class="case-pill">Mobile UI</span>
+</div>
+</div>
+<div class="case-intro-copy">
+<p>A healthcare booking flow that routes people from symptoms to a suitable care type, then supports doctor comparison and appointment booking.</p>
+<p>The app does not diagnose users; it helps them choose a safer next step.</p>
+</div>
+</div>
+<div aria-label="Case study summary" class="case-brief">
+<div class="case-brief-primary">
+<article class="case-brief-card">
+<span>Problem</span>
+<p>People get diagnosis-heavy search results when what they need is a clear next step.</p>
+</article>
+<article class="case-brief-card">
+<span>Outcome</span>
+<p>The design gives users a care type before doctor choice, adds safety framing, and keeps next actions visible after booking.</p>
+</article>
+</div>
+<dl aria-label="Project metadata" class="case-brief-meta">
+<div><dt>My Role</dt><dd>Product design, UX flow, mobile UI, and booking interaction design.</dd></div>
+<div><dt>Timeline</dt><dd>Self-directed product case study, built as a portfolio sprint.</dd></div>
+<div><dt>Platform / Type</dt><dd>Mobile app concept for symptom-to-care routing and appointment booking.</dd></div>
+<div><dt>Tools</dt><dd>Figma, wireframes, prototypes, and UI systems.</dd></div>
+</dl>
+</div>
+<div aria-label="Case study shortcuts" class="case-hero-actions">
+<a class="case-hero-action primary" href="#quote-title">View process</a>
+<a class="case-hero-action" href="#flow-title">Skip to flow</a>
+</div>
+<div class="case-process-strip">
+<div class="case-process-strip-head">
+<span>Design process</span>
+<p>Jump to a stage of the case study.</p>
+</div>
+<nav aria-label="CareRoute design process quick links" class="case-process-nav case-process-nav-compact">
+<a aria-label="01 Research: Uncertainty and care anxiety" href="#quote-title" title="Uncertainty and care anxiety"><span>01</span><strong>Research</strong></a>
+<a aria-label="02 Synthesize: Users hit the same decision wall" href="#persona-title" title="Users hit the same decision wall"><span>02</span><strong>Synthesize</strong></a>
+<a aria-label="03 Trust: Explain recommendations and keep control visible" href="#safety-title" title="Explain recommendations and keep control visible"><span>03</span><strong>Trust</strong></a>
+<a aria-label="04 Flow: Symptoms to care type to booking" href="#flow-title" title="Symptoms to care type to booking"><span>04</span><strong>Flow</strong></a>
+<a aria-label="05 UI System: Final mobile screens and states" href="#onboarding-title" title="Final mobile screens and states"><span>05</span><strong>UI System</strong></a>
+<a aria-label="06 Test Next: Trust, clarity, and recovery" href="#reflection-title" title="Trust, clarity, and recovery"><span>06</span><strong>Test Next</strong></a>
+</nav></div>
+<section aria-label="CareRoute final mobile screens preview" class="case-visual case-final case-carousel care-phone-carousel">
+<div class="case-carousel-header">
+<span>Final output preview</span>
+<p>CareRoute screens from onboarding through symptom routing, doctor choice, booking, and cancellation states.</p>
+<span class="case-carousel-cue">Drag / scroll</span>
+</div>
+<div aria-label="Scrollable carousel of CareRoute mobile screens" class="case-carousel-viewport" data-auto-carousel="" tabindex="0">
+<div class="case-carousel-track">
+
+<figure class="case-carousel-slide">
+<img alt="CareRoute welcome screen with Get Started and Log in actions" class="case-image" decoding="async" fetchpriority="high" src="./imgs/careroute-welcome.webp"/>
+<figcaption>Welcome</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="CareRoute sign up screen with email, password, terms, and login link" class="case-image" decoding="async" loading="lazy" src="./imgs/careroute-sign-up.webp"/>
+<figcaption>Sign Up</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="CareRoute personal information form with name, birth date, gender, and reference fields" class="case-image" decoding="async" loading="lazy" src="./imgs/careroute-personal-information.webp"/>
+<figcaption>Personal Info</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="CareRoute health information form with chronic conditions, medications, and allergies" class="case-image" decoding="async" loading="lazy" src="./imgs/careroute-health-information.webp"/>
+<figcaption>Health Info</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="CareRoute review information screen with personal and health details" class="case-image" decoding="async" loading="lazy" src="./imgs/careroute-review-information.webp"/>
+<figcaption>Review Info</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="CareRoute profile complete confirmation screen" class="case-image" decoding="async" loading="lazy" src="./imgs/careroute-account-created.webp"/>
+<figcaption>Profile Ready</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="CareRoute home feed with symptom search, quick topics, upcoming appointment, and bottom navigation" class="case-image" decoding="async" loading="lazy" src="./imgs/careroute-feed.webp"/>
+<figcaption>Home Feed</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="CareRoute symptom input screen with search, common topics, and optional description field" class="case-image" decoding="async" loading="lazy" src="./imgs/careroute-symptom-input.webp"/>
+<figcaption>Symptom Input</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="CareRoute symptom duration question with less than a day, one to three days, four to seven days, and more than a week options" class="case-image" decoding="async" loading="lazy" src="./imgs/careroute-symptom-duration.webp"/>
+<figcaption>Duration Question</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="CareRoute symptom severity question with mild, moderate, and severe options" class="case-image" decoding="async" loading="lazy" src="./imgs/careroute-symptom-severity.webp"/>
+<figcaption>Severity Question</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="CareRoute fever question with no fever, low fever, and high fever options" class="case-image" decoding="async" loading="lazy" src="./imgs/careroute-symptom-fever.webp"/>
+<figcaption>Fever Question</figcaption>
+</figure>
+
+<figure class="case-carousel-slide">
+<img alt="CareRoute result screen recommending a General Practitioner and showing doctor options" class="case-image" decoding="async" loading="lazy" src="./imgs/careroute-result.webp"/>
+<figcaption>Care Result</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="CareRoute more doctors list with repeated doctor cards and ratings" class="case-image" decoding="async" loading="lazy" src="./imgs/careroute-more-doctors.webp"/>
+<figcaption>More Doctors</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="CareRoute doctor profile with month selection" class="case-image" decoding="async" loading="lazy" src="./imgs/careroute-doctor-month-booking.webp"/>
+<figcaption>Month Booking</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="CareRoute doctor profile with time slot selection" class="case-image" decoding="async" loading="lazy" src="./imgs/careroute-doctor-time-booking.webp"/>
+<figcaption>Time Booking</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="CareRoute appointment summary screen before booking confirmation" class="case-image" decoding="async" loading="lazy" src="./imgs/careroute-appointment-summary.webp"/>
+<figcaption>Booking Summary</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="CareRoute appointment summary screen with doctor information expanded" class="case-image" decoding="async" loading="lazy" src="./imgs/careroute-appointment-summary-expanded.webp"/>
+<figcaption>Expanded Details</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="CareRoute appointment confirmed screen with calendar and bookings actions" class="case-image" decoding="async" loading="lazy" src="./imgs/careroute-appointment-confirmed.webp"/>
+<figcaption>Confirmed</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="CareRoute My Bookings upcoming tab with three appointment cards" class="case-image" decoding="async" loading="lazy" src="./imgs/careroute-bookings-upcoming.webp"/>
+<figcaption>Upcoming Bookings</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="CareRoute appointment details opened from the bookings list" class="case-image" decoding="async" loading="lazy" src="./imgs/careroute-booking-details-from-bookings.webp"/>
+<figcaption>Booking Details</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="CareRoute cancellation confirmation screen asking if the user is sure" class="case-image" decoding="async" loading="lazy" src="./imgs/careroute-cancel-confirmation.webp"/>
+<figcaption>Cancel Confirm</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="CareRoute appointment cancelled screen with bookings and back home actions" class="case-image" decoding="async" loading="lazy" src="./imgs/careroute-appointment-cancelled.webp"/>
+<figcaption>Cancelled</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="CareRoute My Bookings history tab empty state with start symptom check card" class="case-image" decoding="async" loading="lazy" src="./imgs/careroute-bookings-history.webp"/>
+<figcaption>Booking History</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<div aria-label="CareRoute short summary" class="case-tldr">
+<article>
+<span>Problem</span>
+<p>Symptom search gives people scary diagnosis lists when they really need direction.</p>
+</article>
+<article>
+<span>Solution</span>
+<p>Ask for symptoms and context, recommend a care type, then show doctors that match the next step.</p>
+</article>
+<article>
+<span>Result</span>
+<p>The flow reduces guesswork before booking and makes comparison easier to scan.</p>
+</article>
+</div>
+</section>
+<section aria-labelledby="problem-title" class="case-section">
+<div class="case-section-header">
+<p class="case-kicker">The Problem</p>
+<h2 class="case-section-title" id="problem-title">Too many options. No clear next step.</h2>
+<p>
+            Symptom searches return diagnoses, not directions. Booking platforms show too many
+            options with no way to know which is right. The gap is not medical information - it is
+            someone telling you where to go.
+          </p>
+</div>
+<div class="pain-grid">
+<article class="pain-card">
+<span>Pain Point</span>
+<h3>Wrong specialty, wasted time</h3>
+<p>Many patients do not see the right specialist first, leading to delays in getting actual care.</p>
+</article>
+<article class="pain-card">
+<span>Pain Point</span>
+<h3>Symptom checkers cause anxiety</h3>
+<p>Online symptom guidance produces inaccurate results that leave users more worried than when they started.</p>
+</article>
+<article class="pain-card">
+<span>Pain Point</span>
+<h3>Booking UX is broken</h3>
+<p>Online medical forms are confusing and do not assess the patient's situation, pushing people away from digital booking.</p>
+</article>
+<article class="pain-card">
+<span>Pain Point</span>
+<h3>Nobody gives direction</h3>
+<p>Platforms show doctors. Nobody tells you which type you need before showing them.</p>
+</article>
+<article class="pain-card"><span>Pain Point</span><h3>High-stakes choice, low confidence</h3><p>Choosing the wrong care path feels risky, so users need reassurance before committing to a doctor or appointment.</p></article><article class="pain-card"><span>Pain Point</span><h3>No recovery path</h3><p>If a recommendation feels wrong, users need a clear way to compare alternatives, go back, or go back without losing context.</p></article></div>
+</section>
+<section aria-labelledby="quote-title" class="case-section care-research-section">
+<div class="case-section-header">
+<p class="case-kicker">Research</p>
+<h2 class="case-section-title" id="quote-title">Different users. Same wall.</h2>
+<p>Each person described a different health situation, but the same UX failure kept appearing: too many options, too much uncertainty, and no clear next step.</p>
+</div>
+<div class="quote-grid care-user-quote-grid">
+<blockquote class="quote-card">
+<p>"I waited several days before doing anything. Searching online made me more anxious because I still did not know which specialist to see."</p>
+<cite>User Interview - Isabella, 29</cite>
+</blockquote>
+<blockquote class="quote-card">
+<p>"I can book online, but I do not fully trust the result unless I understand why that doctor fits my situation."</p>
+<cite>User Interview - Adam, 35</cite>
+</blockquote>
+<blockquote class="quote-card">
+<p>"When there are too many doctors, I start comparing everything and end up delaying the appointment."</p>
+<cite>User Interview - Margaret, 52</cite>
+</blockquote>
+</div>
+<div aria-hidden="true" class="case-anchor" id="persona-title"></div>
+<div class="persona-grid care-persona-grid">
+<article class="persona-card">
+<span>Isabella, 29 - Marketing Manager</span>
+<h3>Needs simple guidance</h3>
+<p>Does not know what specialist to see. Backs away from online booking when overwhelmed.</p>
+</article>
+<article class="persona-card">
+<span>Adam, 35 - Freelance Designer</span>
+<h3>Needs trust signals</h3>
+<p>Takes online appointments but trusts them less. Needs credentials, distance, and a reason before committing.</p>
+</article>
+<article class="persona-card">
+<span>Margaret, 52 - Nurse / Parent</span>
+<h3>Needs a safer choice</h3>
+<p>Researches symptoms thoroughly, but wants the interface to reduce worry instead of adding more decisions.</p>
+</article>
+</div>
+<figure aria-label="How uncertainty turns into delayed action" class="case-visual case-mini-visual care-flow-card">
+<div class="care-flow">
+<span>Symptom</span>
+<span>Search</span>
+<span>Anxiety</span>
+<span>Delay</span>
+<span>Guess</span>
+<span>Doctor</span>
+</div>
+</figure>
+</section>
+<section aria-labelledby="safety-title" class="case-section">
+<div class="case-section-header">
+<p class="case-kicker">Trust &amp; Control</p>
+<h2 class="case-section-title" id="safety-title">The interface explains why before asking users to commit.</h2>
+<p>The screens build confidence through a visible care recommendation, manual doctor comparison, and clear confirmation states.</p>
+</div>
+<div class="evidence-grid">
+<article class="evidence-card">
+<span>Recommendation</span>
+<h3>Care type appears before doctor choice</h3>
+<p>The result screen recommends a care type first, then shows doctors that match that direction.</p>
+</article>
+<article class="evidence-card">
+<span>Explanation</span>
+<h3>The “Why this?” card gives context</h3>
+<p>The user can see why a General Practitioner is suggested before comparing individual doctors.</p>
+</article>
+<article class="evidence-card">
+<span>Comparison</span>
+<h3>More doctors stays available</h3>
+<p>The recommendation narrows the path, but the user can still open a fuller doctor list and compare alternatives.</p>
+</article>
+<article class="evidence-card">
+<span>Confirmation</span>
+<h3>Destructive actions ask twice</h3>
+<p>Cancellation uses a confirmation screen before changing the booking state, so users do not lose an appointment by mistake.</p>
+</article>
+</div>
+</section>
+<section aria-labelledby="flow-title" class="case-section">
+<div class="case-section-header">
+<p class="case-kicker">The Flow</p>
+<h2 class="case-section-title" id="flow-title">Symptoms to care type to booking.</h2>
+<p>The app asks for context, narrows the problem, recommends a care type, then supports booking.</p>
+</div>
+<figure aria-label="CareRoute flow diagram" class="case-visual case-mini-visual care-flow-card">
+<div class="care-flow">
+<span>Profile</span>
+<span>Symptom Input</span>
+<span>Questions</span>
+<span>Care Type</span>
+<span>Doctor Results</span>
+<span>Confirmation</span>
+</div>
+</figure>
+</section>
+<section aria-labelledby="onboarding-title" class="case-section">
+<div class="case-section-header">
+<p class="case-kicker">Final Design</p>
+<h2 class="case-section-title" id="onboarding-title">Profile before symptoms.</h2>
+<p>Health information is collected upfront - when the user is calm - so the symptom flow stays fast when it matters.</p>
+</div>
+<div class="design-pair">
+<figure aria-label="CareRoute onboarding screens" class="case-visual design-visual">
+<div aria-label="Draggable row of CareRoute screens" class="care-screen-row many" data-auto-carousel="" tabindex="0">
+<img alt="CareRoute sign up screen" decoding="async" loading="lazy" src="./imgs/careroute-sign-up.webp"/>
+<img alt="CareRoute personal information screen" decoding="async" loading="lazy" src="./imgs/careroute-personal-information.webp"/>
+<img alt="CareRoute health information screen" decoding="async" loading="lazy" src="./imgs/careroute-health-information.webp"/>
+<img alt="CareRoute review information screen" decoding="async" loading="lazy" src="./imgs/careroute-review-information.webp"/>
+<img alt="CareRoute profile ready confirmation screen" decoding="async" loading="lazy" src="./imgs/careroute-account-created.webp"/>
+</div>
+</figure>
+<div class="annotation-list">
+<article class="annotation-card">
+<span>Screen</span>
+<h3>A short health setup</h3>
+<p>The user adds basic context before starting a symptom flow.</p>
+</article>
+<article class="annotation-card">
+<span>Decision</span>
+<h3>Low-pressure questions</h3>
+<p>The layout keeps each step narrow so it does not feel like a medical form dump.</p>
+</article>
+<article class="annotation-card">
+<span>Fix</span>
+<h3>Less typing during stress</h3>
+<p>The app avoids asking for background details when the user is already worried about symptoms.</p>
+</article>
+</div>
+</div>
+</section>
+<section aria-labelledby="symptom-title" class="case-section">
+<div class="case-section-header">
+<p class="case-kicker">Final Design</p>
+<h2 class="case-section-title" id="symptom-title">Free text first. Structure second.</h2>
+<p>Free text first, structured questions second. The app opens with freedom, then narrows with multiple choice.</p>
+</div>
+<div class="design-pair">
+<figure aria-label="CareRoute symptom check screens" class="case-visual design-visual">
+<div aria-label="Draggable row of CareRoute screens" class="care-screen-row many" data-auto-carousel="" tabindex="0">
+<img alt="CareRoute dashboard entry point for symptom check" decoding="async" loading="lazy" src="./imgs/careroute-feed.webp"/>
+<img alt="CareRoute symptom search and description entry point" decoding="async" loading="lazy" src="./imgs/careroute-symptom-input.webp"/>
+<img alt="CareRoute structured symptom question with duration choices" decoding="async" loading="lazy" src="./imgs/careroute-symptom-duration.webp"/>
+<img alt="CareRoute structured symptom question with severity choices" decoding="async" loading="lazy" src="./imgs/careroute-symptom-severity.webp"/>
+<img alt="CareRoute structured symptom question with fever choices" decoding="async" loading="lazy" src="./imgs/careroute-symptom-fever.webp"/>
+</div>
+</figure>
+<div class="annotation-list">
+<article class="annotation-card">
+<span>Screen</span>
+<h3>A two-part symptom flow</h3>
+<p>The user describes the issue, then answers focused questions to help route the next step.</p>
+</article>
+<article class="annotation-card">
+<span>Decision</span>
+<h3>Expression before structure</h3>
+<p>People can say what is wrong in their own words before the interface starts narrowing the path.</p>
+</article>
+<article class="annotation-card">
+<span>Fix</span>
+<h3>Less anxious guessing</h3>
+<p>The user does not have to choose a specialty before the app understands the situation.</p>
+</article>
+</div>
+</div>
+</section>
+<section aria-labelledby="booking-title" class="case-section">
+<div class="case-section-header">
+<p class="case-kicker">Final Design</p>
+<h2 class="case-section-title" id="booking-title">Comparison before commitment.</h2>
+<p>The booking screen keeps doctor choice practical: nearby, available, credentialed, and tied to the recommended care type.</p>
+</div>
+<div class="design-pair">
+<figure aria-label="CareRoute booking screens" class="case-visual design-visual">
+<div aria-label="Draggable row of CareRoute screens" class="care-screen-row many" data-auto-carousel="" tabindex="0">
+<img alt="CareRoute result screen recommending a General Practitioner and showing why that care type fits" decoding="async" loading="lazy" src="./imgs/careroute-result.webp"/>
+<img alt="CareRoute more doctors screen with alternative doctor options" decoding="async" loading="lazy" src="./imgs/careroute-more-doctors.webp"/>
+<img alt="CareRoute doctor profile screen with month selection" decoding="async" loading="lazy" src="./imgs/careroute-doctor-month-booking.webp"/>
+<img alt="CareRoute doctor detail screen with time slot selection" decoding="async" loading="lazy" src="./imgs/careroute-doctor-time-booking.webp"/>
+</div>
+</figure>
+<div class="annotation-list">
+<article class="annotation-card">
+<span>Screen</span>
+<h3>A filtered booking surface</h3>
+<p>The doctor list appears after the care type is clear, with the strongest decision details visible.</p>
+</article>
+<article class="annotation-card">
+<span>Decision</span>
+<h3>Commitment needs proof</h3>
+<p>Credentials, distance, and availability are placed before the final booking action.</p>
+</article>
+<article class="annotation-card">
+<span>Fix</span>
+<h3>Too many doctor cards</h3>
+<p>The user sees a smaller, more useful set instead of browsing a directory while unsure.</p>
+</article>
+</div>
+</div>
+</section>
+<section aria-labelledby="confirmation-title" class="case-section">
+<div class="case-section-header">
+<p class="case-kicker">Final Design</p>
+<h2 class="case-section-title" id="confirmation-title">Next steps stay visible.</h2>
+<p>The final screen repeats the appointment, location, care type, and prep notes so the user knows exactly what happens next.</p>
+</div>
+<div class="design-pair">
+<figure aria-label="CareRoute confirmation screens" class="case-visual design-visual">
+<div aria-label="Draggable row of CareRoute screens" class="care-screen-row many" data-auto-carousel="" tabindex="0">
+<img alt="CareRoute appointment summary before confirmation" decoding="async" loading="lazy" src="./imgs/careroute-appointment-summary.webp"/>
+<img alt="CareRoute appointment summary with information opened" decoding="async" loading="lazy" src="./imgs/careroute-appointment-summary-expanded.webp"/>
+<img alt="CareRoute appointment confirmed screen" decoding="async" loading="lazy" src="./imgs/careroute-appointment-confirmed.webp"/>
+</div>
+</figure>
+<div class="annotation-list">
+<article class="annotation-card">
+<span>Screen</span>
+<h3>A next-step summary</h3>
+<p>The confirmation collects the appointment, care type, address, and prep notes in one place.</p>
+</article>
+<article class="annotation-card">
+<span>Decision</span>
+<h3>Reduce second guessing</h3>
+<p>The strongest details are repeated after booking because users may still feel unsure.</p>
+</article>
+<article class="annotation-card">
+<span>Fix</span>
+<h3>Unclear after-booking state</h3>
+<p>The user leaves with a clear appointment and a short list of things to bring or do.</p>
+</article>
+</div>
+</div>
+</section>
+<section aria-labelledby="bookings-title" class="case-section">
+<div class="case-section-header">
+<p class="case-kicker">Final Design</p>
+<h2 class="case-section-title" id="bookings-title">Bookings stay manageable after confirmation.</h2>
+<p>Users can return to upcoming appointments, review details, cancel when needed, and understand the empty history state without leaving the booking area.</p>
+</div>
+<div class="design-pair">
+<figure aria-label="CareRoute bookings and cancellation screens" class="case-visual design-visual">
+<div aria-label="Draggable row of CareRoute screens" class="care-screen-row many" data-auto-carousel="" tabindex="0">
+<img alt="CareRoute upcoming bookings tab with appointment cards" decoding="async" loading="lazy" src="./imgs/careroute-bookings-upcoming.webp"/>
+<img alt="CareRoute booking details opened from the bookings tab" decoding="async" loading="lazy" src="./imgs/careroute-booking-details-from-bookings.webp"/>
+<img alt="CareRoute cancellation confirmation screen" decoding="async" loading="lazy" src="./imgs/careroute-cancel-confirmation.webp"/>
+<img alt="CareRoute appointment cancelled feedback screen" decoding="async" loading="lazy" src="./imgs/careroute-appointment-cancelled.webp"/>
+<img alt="CareRoute bookings history empty state" decoding="async" loading="lazy" src="./imgs/careroute-bookings-history.webp"/>
+</div>
+</figure>
+<div class="annotation-list">
+<article class="annotation-card">
+<span>Screen</span>
+<h3>Upcoming and history states</h3>
+<p>The calendar area supports active appointments, detailed booking states, cancellation, and an empty history state.</p>
+</article>
+<article class="annotation-card">
+<span>Decision</span>
+<h3>Cancellation gets friction</h3>
+<p>The destructive action asks for confirmation, then gives a clear success state and routes the user back to bookings or home.</p>
+</article>
+<article class="annotation-card">
+<span>Fix</span>
+<h3>No dead-end booking states</h3>
+<p>Every booking outcome keeps a next action visible, so users are not stranded after confirming or cancelling.</p>
+</article>
+</div>
+</div>
+</section>
+<section aria-labelledby="outcome-title" class="case-section">
+<div class="case-section-header">
+<p class="case-kicker">Outcome Logic</p>
+<h2 class="case-section-title" id="outcome-title">What the redesign changes in the user journey.</h2>
+<p>This is a self-directed case study, so the outcome is framed through reduced uncertainty, clearer decision order, and stronger after-action states.</p>
+</div>
+<div aria-label="CareRoute before and after comparison" class="comparison-table" role="table">
+<div role="row"><strong role="columnheader">Before</strong><strong role="columnheader">After</strong></div>
+<div role="row"><span role="cell">User chooses a doctor type before knowing what care they need.</span><span role="cell">User describes symptoms first, then receives a care-type recommendation.</span></div>
+<div role="row"><span role="cell">Doctor lists appear with little context.</span><span role="cell">Doctor cards are shown after the app explains the recommended next step.</span></div>
+<div role="row"><span role="cell">Booking confirmation is just an endpoint.</span><span role="cell">Confirmation repeats doctor, time, location, care type, and prep notes.</span></div>
+<div role="row"><span role="cell">Cancellation can become a dead end.</span><span role="cell">Cancellation has confirmation, success feedback, and routes back to bookings or home.</span></div>
+</div>
+</section>
+<section aria-labelledby="decision-title" class="case-section">
+<div class="case-section-header">
+<p class="case-kicker">What Changed</p>
+<h2 class="case-section-title" id="decision-title">The booking flow got safer to scan.</h2>
+</div>
+<div class="decision-grid">
+<article class="decision-item">
+<span>Decision 01</span>
+<p><strong>Open with free text</strong> — Users express themselves before being guided because jumping straight to multiple choice feels presumptuous when someone is anxious.</p>
+</article>
+<article class="decision-item">
+<span>Decision 02</span>
+<p><strong>The recommendation explains itself</strong> — The result screen shows a care type, suitability cue, and “Why this?” card before asking users to compare doctors.</p>
+</article>
+<article class="decision-item">
+<span>Decision 03</span>
+<p><strong>Direction before doctor choice</strong> — Some users only need to know whether a GP or specialist makes sense before browsing individual doctors.</p>
+</article>
+</div>
+</section>
+<section aria-labelledby="reflection-title" class="case-section">
+<div class="case-section-header">
+<p class="case-kicker">Reflection</p>
+<h2 class="case-section-title" id="reflection-title">What I would test next.</h2>
+<p>CareRoute needs trust validation because healthcare guidance has a lower tolerance for vague UI.</p>
+</div>
+<div class="decision-grid">
+<article class="decision-item">
+<span>Learned</span>
+<p><strong>Direction beats diagnosis</strong> — The product is strongest when it helps users choose where to go, not what they have.</p>
+</article>
+<article class="decision-item">
+<span>Test Next</span>
+<p><strong>Recommendation language</strong> — I would test whether users understand care type suggestions without reading them as medical certainty.</p>
+</article>
+<article class="decision-item">
+<span>Improve</span>
+<p><strong>Doctor comparison depth</strong> — Add stronger filtering for distance, availability, credentials, language, and insurance.</p>
+</article>
+</div>
+</section>
+<nav aria-label="Case study navigation" class="case-nav-row">
+<a class="button button-dark" href="./work.html">
+<span aria-hidden="true" class="icon-arrow"></span>
+<span>Back to Work</span>
+</a>
+<a class="button button-light" href="./marathon.html">
+<span aria-hidden="true" class="icon-arrow"></span>
+<span>Next: Marathon</span>
+</a>
+</nav>
+</main>
+<footer class="site-footer" id="contact">
+<div class="footer-top">
+<p>Fady Neddar</p>
+<div class="footer-link-stack">
+<nav aria-label="Social links" class="social-links footer-socials">
+<a href="https://www.linkedin.com/in/fady-neddar-0b409b3a3/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+<a href="https://github.com/neddarfaddy" rel="noopener noreferrer" target="_blank">GitHub</a>
+<a href="https://www.youtube.com/@Shaheen602" rel="noopener noreferrer" target="_blank">YouTube</a>
+<a href="https://www.artstation.com/shahin31" rel="noopener noreferrer" target="_blank">ArtStation</a>
+</nav>
+</div>
+</div>
+<div class="footer-middle">
+<div>
+<p>
+<span>(Online)</span>
+<span id="footer-time">Now, --:--:-- GMT+1</span>
+</p>
+</div>
+<address>
+<span>Based in</span>
+<span>Oran, Algeria</span>
+</address>
+</div>
+<p class="footer-wordmark">Fady Neddar</p>
+</footer>
+<div aria-hidden="true" class="contact-drawer-shell" id="contact-drawer" inert="">
+<button aria-label="Close contact form" class="contact-backdrop" data-contact-close="" type="button"></button>
+<aside aria-labelledby="contact-title" aria-modal="true" class="contact-drawer" role="dialog" tabindex="-1">
+<button aria-label="Close contact form" class="drawer-close" data-contact-close="" type="button">x</button>
+<div class="drawer-intro">
+<p>Contact</p>
+<h2 id="contact-title">Let's Work Together</h2>
+<p>
+            Got a role, project, or just want to chat about design? Fill in the form and I'll get
+            back to you soon.
+          </p>
+</div>
+<nav aria-label="Social links" class="social-links drawer-socials">
+<a href="https://www.linkedin.com/in/fady-neddar-0b409b3a3/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+<a href="https://github.com/neddarfaddy" rel="noopener noreferrer" target="_blank">GitHub</a>
+<a href="https://www.youtube.com/@Shaheen602" rel="noopener noreferrer" target="_blank">YouTube</a>
+<a href="https://www.artstation.com/shahin31" rel="noopener noreferrer" target="_blank">ArtStation</a>
+</nav>
+<form class="contact-form" id="contact-form" action="https://formsubmit.co/fadyneddar@gmail.com" method="POST">
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_subject" value="Portfolio enquiry from Fady Neddar portfolio" />
+          <input class="form-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+<div class="form-row">
+<label>
+<span>First Name <em>*</em></span>
+<input name="firstName" placeholder="First name" required="" type="text"/>
+</label>
+<label>
+<span>Last Name <em>*</em></span>
+<input name="lastName" placeholder="Last name" required="" type="text"/>
+</label>
+</div>
+<div class="form-row">
+<label>
+<span>Email Address <em>*</em></span>
+<input name="email" placeholder="email@company.com" required="" type="email"/>
+</label>
+<label>
+<span>Phone Number</span>
+<input name="phone" placeholder="07000-000000" type="tel"/>
+</label>
+</div>
+<label>
+<span>Enquiry Type <em>*</em></span>
+<select name="enquiryType" required="">
+<option value="">Select one...</option>
+<option>Product design</option>
+<option>Interface redesign</option>
+<option>UX audit</option>
+<option>Front-end prototype</option>
+<option>Other</option>
+</select>
+</label>
+<label>
+<span>Message <em>*</em></span>
+<textarea name="message" placeholder="Your message" required=""></textarea>
+</label>
+          <p class="form-status" data-form-status aria-live="polite"></p>
+<button class="button button-light send-button" type="submit">
+<span aria-hidden="true" class="icon-arrow"></span>
+<span>Send Message</span>
+</button>
+</form>
+</aside>
+</div>
+<div class="theme-picker" data-theme-picker="">
+<div aria-hidden="true" class="theme-menu" id="theme-menu">
+<button class="theme-option" data-theme-value="default" type="button"><span aria-hidden="true" class="theme-swatch swatch-default"></span><span>Default</span></button>
+<button class="theme-option" data-theme-value="olive" type="button"><span aria-hidden="true" class="theme-swatch swatch-olive"></span><span>Olive</span></button>
+<button class="theme-option" data-theme-value="cyan" type="button"><span aria-hidden="true" class="theme-swatch swatch-cyan"></span><span>Cyan</span></button>
+<button class="theme-option" data-theme-value="wine" type="button"><span aria-hidden="true" class="theme-swatch swatch-wine"></span><span>Wine</span></button>
+<button class="theme-option" data-theme-value="ember" type="button"><span aria-hidden="true" class="theme-swatch swatch-ember"></span><span>Ember</span></button>
+<button class="theme-option" data-theme-value="plum" type="button"><span aria-hidden="true" class="theme-swatch swatch-plum"></span><span>Plum</span></button>
+<button class="theme-option" data-theme-value="mono" type="button"><span aria-hidden="true" class="theme-swatch swatch-mono"></span><span>Mono</span></button>
+<button class="theme-option" data-theme-value="paper" type="button"><span aria-hidden="true" class="theme-swatch swatch-paper"></span><span>Paper</span></button>
+<button class="theme-option" data-theme-value="mint-light" type="button"><span aria-hidden="true" class="theme-swatch swatch-mint-light"></span><span>Mint</span></button>
+<button class="theme-option" data-theme-value="sky-light" type="button"><span aria-hidden="true" class="theme-swatch swatch-sky-light"></span><span>Sky</span></button>
+<button class="theme-option" data-theme-value="blush-light" type="button"><span aria-hidden="true" class="theme-swatch swatch-blush-light"></span><span>Blush</span></button>
+<button class="theme-option" data-theme-value="pink" type="button"><span aria-hidden="true" class="theme-swatch swatch-pink"></span><span>Pink</span></button>
+</div>
+<button aria-controls="theme-menu" aria-expanded="false" aria-label="Choose color theme" class="theme-toggle" data-theme-toggle="" type="button">
+<span aria-hidden="true" class="theme-toggle-mark"></span>
+</button>
+</div>
+<div aria-hidden="true" class="media-lightbox" data-media-lightbox="">
+<button aria-label="Close image preview" class="media-lightbox-backdrop" data-media-close="" type="button"></button>
+<figure class="media-lightbox-frame">
+<button aria-label="Close image preview" class="media-lightbox-close" data-media-close="" type="button">x</button>
+<img alt="" data-media-image="" src=""/>
+<figcaption class="media-lightbox-caption" data-media-caption=""></figcaption>
+</figure>
+</div>
+<script data-gsap="" src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="./script.js"></script>
+</body>
+</html>

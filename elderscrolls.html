@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+
+<html lang="en" data-theme="violet">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Elder Scrolls VI Interface Concept | Fady Neddar - UI/UX Designer</title>
+<meta content="Elder Scrolls VI interface concept by Fady Neddar, focused on RPG information architecture, inventory readability, quest clarity, map navigation, and HUD hierarchy." name="description"/>
+<meta content="article" property="og:type"/>
+<meta content="Elder Scrolls VI Interface Concept - Fady Neddar" property="og:title"/>
+<meta content="Interface concept for a complex RPG system, focused on inventory, quest logs, map readability, pause menus, HUD hierarchy, and preserving world identity." property="og:description"/>
+<meta content="./imgs/social-preview.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Elder Scrolls VI Interface Concept - Fady Neddar" name="twitter:title"/>
+<meta content="Interface concept for RPG information architecture, inventory readability, quest clarity, map navigation, and HUD hierarchy." name="twitter:description"/>
+<meta content="./imgs/social-preview.png" name="twitter:image"/>
+<link href="./favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="#121312" name="theme-color"/>
+<script>
+      try {
+        const theme = localStorage.getItem("portfolio-theme") || "default";
+        const themeBackgrounds = {
+          default: "#121312",
+          olive: "#11140e",
+          cyan: "#101618",
+          wine: "#170f12",
+          ember: "#17110d",
+          plum: "#141018",
+          mono: "#111111",
+          paper: "#f3efe8",
+          "mint-light": "#e9f0e8",
+          "sky-light": "#e8eef0",
+          "blush-light": "#f0e9e9",
+          pink: "#f5e5ee",
+          acid: "#0b1009",
+          ocean: "#09111d",
+          violet: "#120d1b",
+          ruby: "#170d10",
+          gold: "#171307",
+          "teal-light": "#e2f2ef",
+          "lilac-light": "#eee9f6",
+          "citrus-light": "#f4f1df"
+        };
+        const themeTransitionBackgrounds = {
+          default: "#0e0f0e",
+          olive: "#0c100b",
+          cyan: "#0b1010",
+          wine: "#100b0d",
+          ember: "#100d0a",
+          plum: "#0f0c11",
+          mono: "#050505",
+          paper: "#ded9cf",
+          "mint-light": "#d9e2d7",
+          "sky-light": "#d7e2e6",
+          "blush-light": "#e2d6d8",
+          pink: "#ead1df",
+          acid: "#080d07",
+          ocean: "#060d16",
+          violet: "#0e0916",
+          ruby: "#10090b",
+          gold: "#100d05",
+          "teal-light": "#d0e5e0",
+          "lilac-light": "#ddd5ea",
+          "citrus-light": "#e5dec0"
+        };
+        document.documentElement.setAttribute("data-theme", theme);
+        document.documentElement.style.setProperty("--initial-bg", themeBackgrounds[theme] || "#121312");
+        document.documentElement.style.setProperty("--initial-transition-bg", themeTransitionBackgrounds[theme] || "#0e0f0e");
+      } catch {
+        document.documentElement.setAttribute("data-theme", "default");
+        document.documentElement.style.setProperty("--initial-bg", "#121312");
+        document.documentElement.style.setProperty("--initial-transition-bg", "#0e0f0e");
+      }
+    </script>
+<style>
+      html,
+      body {
+        min-height: 100%;
+        margin: 0;
+        background: var(--initial-bg, #121312);
+        color: #f1f1f1;
+        color-scheme: dark;
+      }
+
+      body {
+        min-height: 100vh;
+      }
+
+      .page-transition {
+        position: fixed;
+        inset: 0;
+        z-index: 500;
+        pointer-events: none;
+        background: var(--initial-transition-bg, var(--initial-bg, #121312));
+      }
+    </style>
+<link href="./styles.css" rel="stylesheet"/>
+</head>
+<body class="case-study-body">
+<div aria-hidden="true" class="page-transition"></div>
+<div aria-hidden="true" class="background-waves">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<header aria-label="Primary navigation" class="site-header">
+<nav class="nav-shell">
+<div class="nav-left">
+<a aria-label="Fady Neddar home" class="brand" href="./index.html">
+<span>Fady Neddar</span>
+</a>
+<span aria-hidden="true" class="divider">|</span>
+<a href="./work.html">Work</a>
+<span aria-hidden="true" class="divider">|</span>
+<a href="./index.html#approach">Approach</a>
+<span aria-hidden="true" class="divider">|</span>
+<a href="./about.html">About</a>
+</div>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu" class="mobile-menu-toggle" data-mobile-menu-toggle="" type="button">
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+</button>
+<button class="button button-light nav-cta" data-contact-open="" type="button">
+<span aria-hidden="true" class="icon-arrow"></span>
+<span>Let's Work Together</span>
+</button>
+<div aria-hidden="true" class="mobile-menu" data-mobile-menu="" id="mobile-menu">
+<a href="./work.html">Work</a>
+<a href="./index.html#approach">Approach</a>
+<a href="./about.html">About</a>
+<button class="button button-light" data-contact-open="" type="button">
+<span aria-hidden="true" class="icon-arrow"></span>
+<span>Let's Work Together</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="case-page case-elder" id="top">
+<section aria-labelledby="case-title" class="case-shell case-hero">
+<div class="case-hero-grid">
+<div>
+<h1 class="case-title" id="case-title">Elder Scrolls VI Interface Concept</h1>
+<p class="case-kicker">Complex interface concept / RPG systems</p>
+<div aria-label="Project details" class="case-meta-row">
+<span class="case-pill">RPG Systems</span>
+<span class="case-pill">Information Architecture</span>
+<span class="case-pill">HUD Hierarchy</span>
+</div>
+</div>
+<div class="case-intro-copy">
+<p>Interface concept for a large RPG system with inventory, quests, map, HUD, pause menus, and system settings.</p>
+<p>The goal was to preserve world identity while making dense RPG information easier to scan.</p>
+</div>
+</div>
+
+<div aria-label="Case study summary" class="case-brief">
+<div class="case-brief-primary">
+<article class="case-brief-card">
+<span>Problem</span>
+<p>Large RPG systems need depth without burying core actions behind unclear menu layers.</p>
+</article>
+<article class="case-brief-card">
+<span>Outcome</span>
+<p>The redesign organizes RPG decision-making around readable systems while keeping the world identity intact.</p>
+</article>
+</div>
+<dl aria-label="Project metadata" class="case-brief-meta">
+<div><dt>My Role</dt><dd>Information architecture, interface design, visual design, and interaction design.</dd></div>
+<div><dt>Timeline</dt><dd>Self-directed game UI concept focused on system hierarchy and screen readability.</dd></div>
+<div><dt>Platform / Type</dt><dd>PC RPG interface concept for menu-heavy systems, map, inventory, and HUD.</dd></div>
+<div><dt>Tools</dt><dd>Figma, wireframes, UI systems, and prototype thinking.</dd></div>
+</dl>
+</div>
+<div aria-label="Case study shortcuts" class="case-hero-actions">
+<a class="case-hero-action primary" href="#problem-title">View process</a>
+<a class="case-hero-action" href="#menu-title">Skip to screens</a>
+</div>
+
+<div class="case-process-strip">
+<div class="case-process-strip-head">
+<span>Design process</span>
+<p>Jump to a stage of the case study.</p>
+</div>
+<nav aria-label="Elder Scrolls VI design process quick links" class="case-process-nav case-process-nav-compact">
+<a aria-label="01 Define: Dense RPG systems need scanning" href="#problem-title" title="Dense RPG systems need scanning"><span>01</span><strong>Define</strong></a>
+<a aria-label="02 Research: Atmosphere versus usability" href="#community-title" title="Atmosphere versus usability"><span>02</span><strong>Research</strong></a>
+<a aria-label="03 Flow: One pause layer and clear exits" href="#flow-title" title="One pause layer and clear exits"><span>03</span><strong>Flow</strong></a>
+<a aria-label="04 IA: Group systems by player task" href="#ia-title" title="Group systems by player task"><span>04</span><strong>IA</strong></a>
+<a aria-label="05 UI System: Menus, HUD, inventory, map" href="#menu-title" title="Menus, HUD, inventory, map"><span>05</span><strong>UI System</strong></a>
+<a aria-label="06 Test Next: Readability and input parity" href="#reflection-title" title="Readability and input parity"><span>06</span><strong>Test Next</strong></a>
+</nav></div>
+<section aria-label="Elder Scrolls VI concept screens preview" class="case-visual case-final case-carousel">
+<div class="case-carousel-header">
+<span>Final output preview</span>
+<p>Interface screens for pause navigation, inventory, character, skills, quest, map, and HUD systems.</p>
+<span class="case-carousel-cue">Drag / scroll</span>
+</div>
+<div aria-label="Scrollable carousel of Elder Scrolls VI concept screens" class="case-carousel-viewport" data-auto-carousel="" tabindex="0">
+<div class="case-carousel-track">
+<figure class="case-carousel-slide">
+<img alt="Elder Scrolls VI press start screen with logo, start prompt, and illustrated backdrop" class="case-image" decoding="async" fetchpriority="high" sizes="(max-width: 820px) 100vw, 66vw" src="./imgs/es-mainmenu-press-1600.jpg" srcset="./imgs/es-mainmenu-press-900.jpg 900w, ./imgs/es-mainmenu-press-1600.jpg 1600w"/>
+<figcaption>Press Start</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="Elder Scrolls VI main menu with Continue, Load, Settings, Credits, and Exit options" class="case-image" decoding="async" loading="lazy" sizes="(max-width: 820px) 100vw, 66vw" src="./imgs/es-mainmenu-1600.jpg" srcset="./imgs/es-mainmenu-1600.jpg 1600w"/>
+<figcaption>Main Menu</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="Elder Scrolls VI pause hub with RPG tabs and system actions visible over the world" class="case-image" decoding="async" loading="lazy" sizes="(max-width: 820px) 100vw, 66vw" src="./imgs/es-pause-system-1600.jpg" srcset="./imgs/es-pause-system-900.jpg 900w, ./imgs/es-pause-system-1600.jpg 1600w"/>
+<figcaption>Pause Hub</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="Elder Scrolls VI inventory screen with category shortcuts, item table, and detail panel" class="case-image" decoding="async" loading="lazy" sizes="(max-width: 820px) 100vw, 66vw" src="./imgs/es-inventory-1600.jpg" srcset="./imgs/es-inventory-900.jpg 900w, ./imgs/es-inventory-1600.jpg 1600w"/>
+<figcaption>Inventory</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="Elder Scrolls VI character screen showing stats, build identity, resistances, and active effects" class="case-image" decoding="async" loading="lazy" sizes="(max-width: 820px) 100vw, 66vw" src="./imgs/es-character-1600.jpg" srcset="./imgs/es-character-900.jpg 900w, ./imgs/es-character-1600.jpg 1600w"/>
+<figcaption>Character</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="Elder Scrolls VI skill tree with Combat, Exploration, Stealth, Gathering, and Crafting columns" class="case-image" decoding="async" loading="lazy" sizes="(max-width: 820px) 100vw, 66vw" src="./imgs/es-skills-1600.jpg" srcset="./imgs/es-skills-900.jpg 900w, ./imgs/es-skills-1600.jpg 1600w"/>
+<figcaption>Skills</figcaption>
+</figure>
+<figure class="case-carousel-slide">
+<img alt="Elder Scrolls VI map screen with parchment map and current objective panel" class="case-image" decoding="async" loading="lazy" sizes="(max-width: 820px) 100vw, 66vw" src="./imgs/es-map-1600.jpg" srcset="./imgs/es-map-900.jpg 900w, ./imgs/es-map-1600.jpg 1600w"/>
+<figcaption>Map</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<div aria-label="Elder Scrolls VI short summary" class="case-tldr">
+<article>
+<span>Problem</span>
+<p>Large RPGs need deep systems without burying inventory, quest, map, and HUD decisions.</p>
+</article>
+<article>
+<span>Solution</span>
+<p>Use one pause layer, clearer categories, readable tables, and restrained HUD hierarchy.</p>
+</article>
+<article>
+<span>Result</span>
+<p>The concept shows complex system organization with stronger scanning and franchise atmosphere intact.</p>
+</article>
+</div>
+</section>
+<section aria-labelledby="problem-title" class="case-section">
+<div class="case-section-header">
+<p class="case-kicker">The Problem</p>
+<h2 class="case-section-title" id="problem-title">Deep systems need faster scanning.</h2>
+<p>
+            Elder Scrolls players expect atmosphere, depth, and readable information at the same time.
+            The concept keeps the series feeling old-world, but removes the friction that makes big RPG systems slow to scan on PC.
+          </p>
+</div>
+<div class="pain-grid">
+<article class="pain-card">
+<span>P-01 High</span>
+<h3>Nested Menus</h3>
+<p>Major actions can sit behind multiple steps when players need fast access during exploration.</p>
+</article>
+<article class="pain-card">
+<span>P-02 High</span>
+<h3>Inventory Density</h3>
+<p>Weapons, armor, books, potions, and quest items need strong filtering without losing the RPG feel.</p>
+</article>
+<article class="pain-card">
+<span>P-03 Medium</span>
+<h3>PC Readability</h3>
+<p>Mouse and keyboard users need clearer hit areas, faster category switching, and readable stat comparison.</p>
+</article>
+<article class="pain-card">
+<span>P-04 Medium</span>
+<h3>HUD Restraint</h3>
+<p>The interface has to show health, stamina, magic, compass, and prompts without fighting the world.</p>
+</article>
+</div>
+</section>
+<section aria-labelledby="community-title" class="case-section">
+<div class="case-section-header">
+<p class="case-kicker">Key Insight</p>
+<h2 class="case-section-title" id="community-title">Atmosphere still has to work fast.</h2>
+<p>The concept was shaped around recurring Elder Scrolls community requests: atmosphere, fewer clicks, and better PC-first interaction.</p>
+</div>
+<div class="quote-grid es-feedback-grid">
+<blockquote class="quote-card quote-response-card">
+<p>"Skyrim's default UI is so poorly optimised for PC. I have never gone back since I got SkyUI."</p>
+<cite>ThirdStreetSeren, r/ElderScrolls</cite>
+<div class="design-response">
+<span>Design response</span>
+<p>The tab bar navigation and keyboard-first layout means the ES6 UI works properly on PC without needing a mod to fix it. No console-port compromises.</p>
+</div>
+</blockquote>
+<blockquote class="quote-card quote-response-card">
+<p>"Oblivion is a submenu fest that takes a while to get back used to."</p>
+<cite>ThirdStreetSeren, r/ElderScrolls</cite>
+<div class="design-response">
+<span>Design response</span>
+<p>Every screen is one tab away from any other. There are no nested menus. You open the pause menu and everything is already visible across the top bar.</p>
+</div>
+</blockquote>
+<blockquote class="quote-card quote-response-card">
+<p>"I liked being able to see every magic effect on me at a glance in Morrowind, without going several pages into the menu like Skyrim."</p>
+<cite>lydiardbell, r/ElderScrolls</cite>
+<div class="design-response">
+<span>Design response</span>
+<p>Active effects are shown directly on the Character screen with timers visible. No extra clicks, no digging through menus mid-combat to see what is debuffing you.</p>
+</div>
+</blockquote>
+<blockquote class="quote-card quote-response-card">
+<p>"Oblivion has so much character. Skyrim's UI has the aesthetics but no soul. Bethesda should hire whoever did SkyUI."</p>
+<cite>bmgarcia20 + InBlurFather, r/ElderScrolls</cite>
+<div class="design-response">
+<span>Design response</span>
+<p>The UI uses a consistent visual language rooted in ES lore, from the diamond selection icon to the aged parchment map. It should feel like it belongs in this world, not borrowed from another game.</p>
+</div>
+</blockquote>
+</div>
+</section>
+<section aria-labelledby="flow-title" class="case-section">
+<div class="case-section-header">
+<p class="case-kicker">The Flow</p>
+<h2 class="case-section-title" id="flow-title">One pause layer. Clear exits.</h2>
+<p>The pause menu acts as the hub. Inventory, character, map, quests, skills, and system settings stay one step away.</p>
+</div>
+<div class="flow-grid">
+<article class="pain-card">
+<span>01</span>
+<h3>Open Pause</h3>
+<p>Player enters one hub instead of guessing which menu family contains the action.</p>
+</article>
+<article class="pain-card">
+<span>02</span>
+<h3>Choose System</h3>
+<p>Primary categories stay visible, with keyboard shortcuts and mouse targets treated equally.</p>
+</article>
+<article class="pain-card">
+<span>03</span>
+<h3>Act, Compare, Return</h3>
+<p>The player can equip, compare, read, track, or back out without rebuilding context.</p>
+</article>
+</div>
+<figure class="case-image-card">
+<img alt="Elder Scrolls VI concept flow diagram" decoding="async" loading="lazy" sizes="(max-width: 820px) 100vw, 66vw" src="./imgs/es-flow-diagram-1600.jpg" srcset="./imgs/es-flow-diagram-1600.jpg 1600w"/>
+<figcaption>Flow overview - one pause layer routes into each RPG system without hiding the exit path.</figcaption>
+</figure>
+</section>
+<section aria-labelledby="ia-title" class="case-section">
+<div class="case-section-header">
+<p class="case-kicker">System Logic</p>
+<h2 class="case-section-title" id="ia-title">The concept is built around information architecture, not just atmosphere.</h2>
+<p>The visual direction supports the world, but the structure is intentionally practical: every major system is one step from pause, and every dense screen is grouped by player task.</p>
+</div>
+<div class="evidence-grid system-grid">
+<article class="evidence-card">
+<span>Navigation</span>
+<h3>One pause hub</h3>
+<p>Character, Inventory, Map, Quests, Skills, Settings, and Load/Save stay close instead of hiding in nested families.</p>
+</article>
+<article class="evidence-card">
+<span>Inventory</span>
+<h3>Scan first, inspect second</h3>
+<p>Rows support quick comparison, while the detail panel gives depth after the player has selected an item.</p>
+</article>
+<article class="evidence-card">
+<span>Quests</span>
+<h3>Task, story, reward together</h3>
+<p>The quest screen keeps objective, context, region, reward, and journal text on the same screen.</p>
+</article>
+<article class="evidence-card">
+<span>HUD</span>
+<h3>World first</h3>
+<p>Permanent UI sits on the edges, leaving the center of the screen open for exploration and combat reads.</p>
+</article>
+</div>
+</section>
+<section aria-labelledby="menu-title" class="case-section">
+<div class="case-section-header">
+<p class="case-kicker">Final Design</p>
+<h2 class="case-section-title" id="menu-title">Main menu and pause hub.</h2>
+<p>The entry screens use large typography, quiet motion, and parchment-like surface contrast without turning the interface into decoration.</p>
+</div>
+<div class="screen-grid">
+<article class="screen-card">
+<div class="screen-card-media"><img alt="Elder Scrolls VI press start concept" decoding="async" loading="lazy" sizes="(max-width: 820px) 100vw, 66vw" src="./imgs/es-mainmenu-press-1600.jpg" srcset="./imgs/es-mainmenu-press-900.jpg 900w, ./imgs/es-mainmenu-press-1600.jpg 1600w"/></div>
+<div class="screen-card-body">
+<p class="screen-card-kicker">01 - Launch Flow</p>
+<h3 class="screen-card-title">Press Start</h3>
+<div class="screen-card-copy">
+<p><strong>Screen</strong> A title beat with the logo, one start prompt, and a dark illustrated backdrop.</p>
+<p><strong>Decision</strong> The logo gets room before the practical menu appears, so the first screen feels like a door into the world.</p>
+<p><strong>Fix</strong> It creates a stronger first impression without adding choices before the player has started.</p>
+</div>
+</div>
+</article>
+<article class="screen-card">
+<div class="screen-card-media"><img alt="Elder Scrolls VI main menu concept" decoding="async" loading="lazy" sizes="(max-width: 820px) 100vw, 66vw" src="./imgs/es-mainmenu-1600.jpg" srcset="./imgs/es-mainmenu-1600.jpg 1600w"/></div>
+<div class="screen-card-body">
+<p class="screen-card-kicker">02 - Launch Flow</p>
+<h3 class="screen-card-title">Main Menu</h3>
+<div class="screen-card-copy">
+<p><strong>Screen</strong> A left-aligned menu for Continue, Load, Settings, Credits, and Exit.</p>
+<p><strong>Decision</strong> Serif type, a selection diamond, and warm texture keep the menu old-world while the list stays easy to scan.</p>
+<p><strong>Fix</strong> It keeps the Elder Scrolls mood without making the first usable screen feel heavy or overbuilt.</p>
+</div>
+</div>
+</article>
+<article class="screen-card screen-card-wide">
+<div class="screen-card-media"><img alt="Elder Scrolls VI pause hub concept" decoding="async" loading="lazy" sizes="(max-width: 820px) 100vw, 66vw" src="./imgs/es-pause-system-1600.jpg" srcset="./imgs/es-pause-system-900.jpg 900w, ./imgs/es-pause-system-1600.jpg 1600w"/></div>
+<div class="screen-card-body">
+<p class="screen-card-kicker">03 - Pause Layer</p>
+<h3 class="screen-card-title">Pause Hub</h3>
+<div class="screen-card-copy">
+<p><strong>Screen</strong> A pause layer over the live world, with Continue, Load/Save, Settings, Photo Mode, Quit, and Exit available from one screen.</p>
+<p><strong>Decision</strong> The world stays visible but softened. System actions sit on the left, while the top bar keeps the main RPG tabs close.</p>
+<p><strong>Fix</strong> Pausing stops feeling like a dead black screen, and players do not lose where they came from.</p>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section aria-labelledby="hud-title" class="case-section">
+<div class="case-section-header">
+<p class="case-kicker">Final Design</p>
+<h2 class="case-section-title" id="hud-title">HUD that stays out of the way.</h2>
+<p>The HUD stays quiet until the player needs it: compass, quest steps, resources, and active effects sit on the edges so the world still leads.</p>
+</div>
+<div class="screen-grid">
+<article class="screen-card">
+<div class="screen-card-media"><img alt="Elder Scrolls VI exploration HUD concept" decoding="async" loading="lazy" sizes="(max-width: 820px) 100vw, 66vw" src="./imgs/es-hud-1600.jpg" srcset="./imgs/es-hud-1600.jpg 1600w"/></div>
+<div class="screen-card-body">
+<p class="screen-card-kicker">01 - Gameplay HUD</p>
+<h3 class="screen-card-title">Exploration HUD</h3>
+<div class="screen-card-copy">
+<p><strong>Screen</strong> Active gameplay HUD with compass, quest tracker, health, magicka, stamina, and a small active-effect marker.</p>
+<p><strong>Decision</strong> Permanent UI stays on the edges. The center remains open for the environment and combat reads.</p>
+<p><strong>Fix</strong> Players get status and direction without the interface fighting the scene.</p>
+</div>
+</div>
+</article>
+<article class="screen-card">
+<div class="screen-card-media"><img alt="Elder Scrolls VI dark scene HUD concept" decoding="async" loading="lazy" sizes="(max-width: 820px) 100vw, 66vw" src="./imgs/es-hero-3-1600.jpg" srcset="./imgs/es-hero-3-1600.jpg 1600w"/></div>
+<div class="screen-card-body">
+<p class="screen-card-kicker">02 - Gameplay HUD</p>
+<h3 class="screen-card-title">Quest + Combat Readability</h3>
+<div class="screen-card-copy">
+<p><strong>Screen</strong> The same HUD in a darker exploration scene, with weapon, shield, compass, quest list, and resources visible.</p>
+<p><strong>Decision</strong> Thin anchored elements survive busy landscapes without becoming a full overlay.</p>
+<p><strong>Fix</strong> Quest direction and player status stay readable when subtle fantasy UI can easily disappear.</p>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section aria-labelledby="inventory-title" class="case-section">
+<div class="case-section-header">
+<p class="case-kicker">Final Design</p>
+<h2 class="case-section-title" id="inventory-title">RPG systems grouped by task.</h2>
+<p>The pause tabs are heavier than the HUD because this is where players compare, read, equip, track, and make decisions.</p>
+</div>
+<div class="screen-grid">
+<article class="screen-card">
+<div class="screen-card-media"><img alt="Elder Scrolls VI inventory concept" decoding="async" loading="lazy" sizes="(max-width: 820px) 100vw, 66vw" src="./imgs/es-inventory-1600.jpg" srcset="./imgs/es-inventory-900.jpg 900w, ./imgs/es-inventory-1600.jpg 1600w"/></div>
+<div class="screen-card-body">
+<p class="screen-card-kicker">01 - Pause Tab</p>
+<h3 class="screen-card-title">Inventory</h3>
+<div class="screen-card-copy">
+<p><strong>Screen</strong> A category inventory with item rows in the center and a full item detail panel on the right.</p>
+<p><strong>Decision</strong> Left icons give quick category jumps. The center table keeps name, damage, weight, and value aligned for scanning.</p>
+<p><strong>Fix</strong> It avoids the slow single-list problem. Players get a proper scan-and-compare layout.</p>
+</div>
+</div>
+</article>
+<article class="screen-card">
+<div class="screen-card-media"><img alt="Elder Scrolls VI character screen concept" decoding="async" loading="lazy" sizes="(max-width: 820px) 100vw, 66vw" src="./imgs/es-character-1600.jpg" srcset="./imgs/es-character-900.jpg 900w, ./imgs/es-character-1600.jpg 1600w"/></div>
+<div class="screen-card-body">
+<p class="screen-card-kicker">02 - Pause Tab</p>
+<h3 class="screen-card-title">Character</h3>
+<div class="screen-card-copy">
+<p><strong>Screen</strong> Character overview for race, level, XP, attributes, build identity, skill totals, resistances, and active effects.</p>
+<p><strong>Decision</strong> Main stats sit in the center, with secondary info in right-side cards and effects visible without another page.</p>
+<p><strong>Fix</strong> Players can read their build and current status in one place.</p>
+</div>
+</div>
+</article>
+<article class="screen-card">
+<div class="screen-card-media"><img alt="Elder Scrolls VI map concept" decoding="async" loading="lazy" sizes="(max-width: 820px) 100vw, 66vw" src="./imgs/es-map-1600.jpg" srcset="./imgs/es-map-900.jpg 900w, ./imgs/es-map-1600.jpg 1600w"/></div>
+<div class="screen-card-body">
+<p class="screen-card-kicker">03 - Pause Tab</p>
+<h3 class="screen-card-title">Map</h3>
+<div class="screen-card-copy">
+<p><strong>Screen</strong> A parchment-style Hammerfell map with the current objective pinned beside it.</p>
+<p><strong>Decision</strong> The map feels like an object from the world, while the top navigation still behaves like a modern system.</p>
+<p><strong>Fix</strong> Location and quest context stay together, so players know where they are going and why.</p>
+</div>
+</div>
+</article>
+<article class="screen-card">
+<div class="screen-card-media"><img alt="Elder Scrolls VI quest journal concept" decoding="async" loading="lazy" sizes="(max-width: 820px) 100vw, 66vw" src="./imgs/es-quests-1600.jpg" srcset="./imgs/es-quests-1600.jpg 1600w"/></div>
+<div class="screen-card-body">
+<p class="screen-card-kicker">04 - Pause Tab</p>
+<h3 class="screen-card-title">Quests</h3>
+<div class="screen-card-copy">
+<p><strong>Screen</strong> A quest journal with filters, quest text, objectives, rewards, giver, region, status, and a journal entry.</p>
+<p><strong>Decision</strong> Browsing, reading, and reference each get a column: list left, story center, details right.</p>
+<p><strong>Fix</strong> Quest tracking becomes more than a thin checklist. The task, reward, and story are readable together.</p>
+</div>
+</div>
+</article>
+<article class="screen-card">
+<div class="screen-card-media"><img alt="Elder Scrolls VI skill tree concept" decoding="async" loading="lazy" sizes="(max-width: 820px) 100vw, 66vw" src="./imgs/es-skills-1600.jpg" srcset="./imgs/es-skills-900.jpg 900w, ./imgs/es-skills-1600.jpg 1600w"/></div>
+<div class="screen-card-body">
+<p class="screen-card-kicker">05 - Pause Tab</p>
+<h3 class="screen-card-title">Skill Tree</h3>
+<div class="screen-card-copy">
+<p><strong>Screen</strong> A full skill tree with Combat, Exploration, Stealth, Gathering, and Crafting shown side by side.</p>
+<p><strong>Decision</strong> Columns replace deep categories so players can compare paths at a glance.</p>
+<p><strong>Fix</strong> Leveling feels less buried. Players see the shape of their build without entering a chain of submenus.</p>
+</div>
+</div>
+</article>
+<article class="screen-card">
+<div class="screen-card-media"><img alt="Elder Scrolls VI settings concept" decoding="async" loading="lazy" sizes="(max-width: 820px) 100vw, 66vw" src="./imgs/es-settings-1600.jpg" srcset="./imgs/es-settings-1600.jpg 1600w"/></div>
+<div class="screen-card-body">
+<p class="screen-card-kicker">06 - System Screen</p>
+<h3 class="screen-card-title">Settings</h3>
+<div class="screen-card-copy">
+<p><strong>Screen</strong> Gameplay settings with difficulty, aim assist, subtitles, brightness, motion blur, audio, and sensitivity controls.</p>
+<p><strong>Decision</strong> Long rows with values on the right support fast keyboard and mouse movement without tiny widgets.</p>
+<p><strong>Fix</strong> Settings stay readable and consistent instead of feeling like a separate launcher menu.</p>
+</div>
+</div>
+</article>
+<article class="screen-card screen-card-wide">
+<div class="screen-card-media"><img alt="Elder Scrolls VI load and save concept" decoding="async" loading="lazy" sizes="(max-width: 820px) 100vw, 66vw" src="./imgs/es-loadsave-1600.jpg" srcset="./imgs/es-loadsave-1600.jpg 1600w"/></div>
+<div class="screen-card-body">
+<p class="screen-card-kicker">07 - System Screen</p>
+<h3 class="screen-card-title">Load / Save</h3>
+<div class="screen-card-copy">
+<p><strong>Screen</strong> A save browser with screenshot thumbnails, location, character, level, playtime, and date.</p>
+<p><strong>Decision</strong> The thumbnail leads each row because players remember where a save happened before they remember the timestamp.</p>
+<p><strong>Fix</strong> It removes guesswork from save slots and makes load/save feel like part of the adventure record.</p>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section aria-labelledby="accessibility-title" class="case-section">
+<div class="case-section-header">
+<p class="case-kicker">Accessibility &amp; Input</p>
+<h2 class="case-section-title" id="accessibility-title">A fantasy interface still needs modern usability options.</h2>
+<p>The next pass should treat accessibility as part of the system, not a settings afterthought.</p>
+</div>
+<div class="decision-grid">
+<article class="decision-item">
+<span>Readability</span>
+<p><strong>Text scaling and contrast modes</strong> — Inventory, quest text, subtitles, and item stats need readable size options without breaking layout.</p>
+</article>
+<article class="decision-item">
+<span>Input parity</span>
+<p><strong>Keyboard, mouse, and controller paths</strong> — Navigation should work with quick shortcuts, clear focus states, and large controller-friendly targets.</p>
+</article>
+<article class="decision-item">
+<span>HUD control</span>
+<p><strong>Reduced and expanded HUD modes</strong> — Players should be able to lower HUD noise during exploration and reveal more detail when needed.</p>
+</article>
+</div>
+</section>
+<section aria-labelledby="decisions-title" class="case-section">
+<div class="case-section-header">
+<p class="case-kicker">What Changed</p>
+<h2 class="case-section-title" id="decisions-title">Readable depth without losing identity.</h2>
+</div>
+<div class="decision-grid">
+<article>
+<h3>One hub before deep systems</h3>
+<p>The pause menu keeps every major RPG area one step away.</p>
+</article>
+<article>
+<h3>Fantasy surface, modern control</h3>
+<p>The UI keeps Elder Scrolls atmosphere while using PC-friendly targets and fast scanning.</p>
+</article>
+<article>
+<h3>Inventory is a workspace</h3>
+<p>The densest screen gets the strongest structure because players spend real time there.</p>
+</article>
+</div>
+</section>
+<section aria-labelledby="reflection-title" class="case-section">
+<div class="case-section-header">
+<p class="case-kicker">Reflection</p>
+<h2 class="case-section-title" id="reflection-title">What I would test next.</h2>
+<p>The concept should be validated through navigation tasks, inventory scanning, and HUD readability in bright and dark scenes.</p>
+</div>
+<div class="decision-grid">
+<article class="decision-item">
+<span>Learned</span>
+<p><strong>Fantasy UI still needs product logic</strong> — Strong visual identity works better when the structure is boringly clear underneath.</p>
+</article>
+<article class="decision-item">
+<span>Test Next</span>
+<p><strong>Inventory and quest tasks</strong> — I would test finding, comparing, tracking, and returning from common RPG actions.</p>
+</article>
+<article class="decision-item">
+<span>Improve</span>
+<p><strong>Accessibility states</strong> — The next pass should cover subtitles, contrast modes, remapping, and HUD scaling.</p>
+</article>
+</div>
+</section>
+<nav aria-label="Case study navigation" class="case-nav-row">
+<a class="button button-dark" href="./work.html">
+<span aria-hidden="true" class="icon-arrow"></span>
+<span>Back to Work</span>
+</a>
+<a class="button button-light" href="./careroute.html">
+<span aria-hidden="true" class="icon-arrow"></span>
+<span>Next: CareRoute</span>
+</a>
+</nav>
+</main>
+<footer class="site-footer" id="contact">
+<div class="footer-top">
+<p>Fady Neddar</p>
+<div class="footer-link-stack">
+<nav aria-label="Social links" class="social-links footer-socials">
+<a href="https://www.linkedin.com/in/fady-neddar-0b409b3a3/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+<a href="https://github.com/neddarfaddy" rel="noopener noreferrer" target="_blank">GitHub</a>
+<a href="https://www.youtube.com/@Shaheen602" rel="noopener noreferrer" target="_blank">YouTube</a>
+<a href="https://www.artstation.com/shahin31" rel="noopener noreferrer" target="_blank">ArtStation</a>
+</nav>
+</div>
+</div>
+<div class="footer-middle">
+<div>
+<p>
+<span>(Online)</span>
+<span id="footer-time">Now, --:--:-- GMT+1</span>
+</p>
+</div>
+<address>
+<span>Based in</span>
+<span>Oran, Algeria</span>
+</address>
+</div>
+<p class="footer-wordmark">Fady Neddar</p>
+</footer>
+<div aria-hidden="true" class="contact-drawer-shell" id="contact-drawer" inert="">
+<button aria-label="Close contact form" class="contact-backdrop" data-contact-close="" type="button"></button>
+<aside aria-labelledby="contact-title" aria-modal="true" class="contact-drawer" role="dialog" tabindex="-1">
+<button aria-label="Close contact form" class="drawer-close" data-contact-close="" type="button">x</button>
+<div class="drawer-intro">
+<p>Contact</p>
+<h2 id="contact-title">Let's Work Together</h2>
+<p>Got a role, project, or just want to chat about design? Fill in the form and I'll get back to you soon.</p>
+</div>
+<form class="contact-form" id="contact-form" action="https://formsubmit.co/fadyneddar@gmail.com" method="POST">
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_subject" value="Portfolio enquiry from Fady Neddar portfolio" />
+          <input class="form-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+<div class="form-row">
+<label><span>First Name <em>*</em></span><input name="firstName" placeholder="First name" required="" type="text"/></label>
+<label><span>Last Name <em>*</em></span><input name="lastName" placeholder="Last name" required="" type="text"/></label>
+</div>
+<div class="form-row">
+<label><span>Email Address <em>*</em></span><input name="email" placeholder="email@company.com" required="" type="email"/></label>
+<label><span>Phone Number</span><input name="phone" placeholder="07000-000000" type="tel"/></label>
+</div>
+<label><span>Enquiry Type <em>*</em></span><select name="enquiryType" required=""><option value="">Select one...</option><option>Product design</option><option>Interface redesign</option><option>UX audit</option><option>Front-end prototype</option><option>Other</option></select></label>
+<label><span>Message <em>*</em></span><textarea name="message" placeholder="Your message" required=""></textarea></label>
+          <p class="form-status" data-form-status aria-live="polite"></p>
+<button class="button button-light send-button" type="submit"><span aria-hidden="true" class="icon-arrow"></span><span>Send Message</span></button>
+</form>
+</aside>
+</div>
+<div class="theme-picker" data-theme-picker="">
+<div aria-hidden="true" class="theme-menu" id="theme-menu">
+<button class="theme-option" data-theme-value="default" type="button"><span aria-hidden="true" class="theme-swatch swatch-default"></span><span>Default</span></button>
+<button class="theme-option" data-theme-value="olive" type="button"><span aria-hidden="true" class="theme-swatch swatch-olive"></span><span>Olive</span></button>
+<button class="theme-option" data-theme-value="cyan" type="button"><span aria-hidden="true" class="theme-swatch swatch-cyan"></span><span>Cyan</span></button>
+<button class="theme-option" data-theme-value="wine" type="button"><span aria-hidden="true" class="theme-swatch swatch-wine"></span><span>Wine</span></button>
+<button class="theme-option" data-theme-value="ember" type="button"><span aria-hidden="true" class="theme-swatch swatch-ember"></span><span>Ember</span></button>
+<button class="theme-option" data-theme-value="plum" type="button"><span aria-hidden="true" class="theme-swatch swatch-plum"></span><span>Plum</span></button>
+<button class="theme-option" data-theme-value="mono" type="button"><span aria-hidden="true" class="theme-swatch swatch-mono"></span><span>Mono</span></button>
+<button class="theme-option" data-theme-value="paper" type="button"><span aria-hidden="true" class="theme-swatch swatch-paper"></span><span>Paper</span></button>
+<button class="theme-option" data-theme-value="mint-light" type="button"><span aria-hidden="true" class="theme-swatch swatch-mint-light"></span><span>Mint</span></button>
+<button class="theme-option" data-theme-value="sky-light" type="button"><span aria-hidden="true" class="theme-swatch swatch-sky-light"></span><span>Sky</span></button>
+<button class="theme-option" data-theme-value="blush-light" type="button"><span aria-hidden="true" class="theme-swatch swatch-blush-light"></span><span>Blush</span></button>
+<button class="theme-option" data-theme-value="pink" type="button"><span aria-hidden="true" class="theme-swatch swatch-pink"></span><span>Pink</span></button>
+</div>
+<button aria-controls="theme-menu" aria-expanded="false" aria-label="Choose color theme" class="theme-toggle" data-theme-toggle="" type="button"><span aria-hidden="true" class="theme-toggle-mark"></span></button>
+</div>
+<div aria-hidden="true" class="media-lightbox" data-media-lightbox="">
+<button aria-label="Close image preview" class="media-lightbox-backdrop" data-media-close="" type="button"></button>
+<figure class="media-lightbox-frame">
+<button aria-label="Close image preview" class="media-lightbox-close" data-media-close="" type="button">x</button>
+<img alt="" data-media-image="" src=""/>
+<figcaption class="media-lightbox-caption" data-media-caption=""></figcaption>
+</figure>
+</div>
+<script data-gsap="" src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="./script.js"></script>
+</body>
+</html>
