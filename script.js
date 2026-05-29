@@ -25,6 +25,7 @@ const contactDrawer = document.getElementById("contact-drawer");
 const contactPanel = document.querySelector(".contact-drawer");
 const contactBackdrop = document.querySelector(".contact-backdrop");
 const contactForm = document.getElementById("contact-form");
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xreddqqo";
 const contactOpenButtons = document.querySelectorAll("[data-contact-open]");
 const contactCloseButtons = document.querySelectorAll("[data-contact-close]");
 const projectCards = document.querySelectorAll(".project-card");
@@ -1038,8 +1039,7 @@ contactForm?.addEventListener("submit", async (event) => {
 
   data.set("name", fullName);
   data.set("_subject", `Portfolio enquiry: ${enquiryType}`);
-  data.set("_template", "table");
-  data.set("_captcha", "false");
+  data.set("_replyto", email);
 
   const setStatus = (messageText, state = "") => {
     if (!status) return;
@@ -1070,7 +1070,7 @@ contactForm?.addEventListener("submit", async (event) => {
   setStatus("Sending message...");
 
   try {
-    const response = await fetch("https://formsubmit.co/ajax/fadyneddar@gmail.com", {
+    const response = await fetch(FORMSPREE_ENDPOINT, {
       method: "POST",
       body: data,
       headers: { Accept: "application/json" },
