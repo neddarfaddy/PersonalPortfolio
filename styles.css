@@ -7111,3 +7111,130 @@ body.theme-open {
     padding: 13px 0;
   }
 }
+
+
+/* v34 - CareRoute interview merge and compact editorial lists */
+.case-careroute .care-interview-list {
+  margin-top: 1rem;
+}
+.case-careroute .care-research-summary {
+  margin-top: clamp(24px, 3vw, 40px);
+}
+.case-careroute .care-compact-list {
+  gap: 0;
+}
+@media (max-width: 560px) {
+  .case-careroute .care-interview-list {
+    gap: 0;
+    border-top: 1px solid var(--stroke);
+  }
+  .case-careroute .care-interview-item {
+    padding: 14px 0;
+    border-top: 0;
+    border-bottom: 1px solid var(--stroke);
+  }
+  .case-careroute .care-interview-meta small {
+    margin-top: 4px;
+  }
+  .case-careroute .care-interview-body {
+    margin-top: 10px;
+  }
+  .case-careroute .care-interview-body p {
+    margin-top: 5px;
+  }
+  .case-careroute .care-interview-item blockquote {
+    margin-top: 10px;
+  }
+  .case-careroute .care-research-summary {
+    margin-top: 24px;
+  }
+  .case-careroute .care-compact-list {
+    margin-top: .55rem;
+  }
+  .case-careroute .care-compact-list li,
+  .case-careroute .care-compact-list li:nth-child(odd),
+  .case-careroute .care-compact-list li:nth-child(even) {
+    min-height: 0;
+    padding: 11px 0;
+  }
+  .case-careroute .care-compact-list p {
+    font-size: 14px;
+    line-height: 1.38;
+  }
+}
+
+/* v35 - Compact CareRoute editorial rows on mobile */
+@media (max-width: 760px) {
+  .case-careroute .care-compact-list,
+  .case-careroute .care-requirement-list {
+    display: block;
+    margin-top: .65rem;
+    border-top: 1px solid var(--stroke);
+  }
+
+  .case-careroute .care-compact-list li,
+  .case-careroute .care-compact-list li:nth-child(odd),
+  .case-careroute .care-compact-list li:nth-child(even),
+  .case-careroute .care-requirement-list li,
+  .case-careroute .care-requirement-list li:nth-child(odd),
+  .case-careroute .care-requirement-list li:nth-child(even) {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 8px;
+    min-height: 0 !important;
+    margin: 0;
+    padding: 11px 0 !important;
+    border: 0 !important;
+    border-bottom: 1px solid var(--stroke) !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+
+  .case-careroute .care-compact-list span,
+  .case-careroute .care-requirement-list span {
+    padding-top: 1px;
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  .case-careroute .care-compact-list p,
+  .case-careroute .care-requirement-list p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.42;
+  }
+
+  .case-careroute .decision-grid {
+    display: block;
+    margin-top: .7rem;
+    border-top: 1px solid var(--stroke);
+  }
+
+  .case-careroute .decision-grid .decision-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0 !important;
+    margin: 0;
+    padding: 12px 0 !important;
+    border: 0 !important;
+    border-bottom: 1px solid var(--stroke) !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+
+  .case-careroute .decision-grid .decision-item span {
+    margin-bottom: 7px;
+    font-size: 11px;
+    line-height: 1.25;
+  }
+
+  .case-careroute .decision-grid .decision-item p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.46;
+  }
+
+  .case-careroute .care-research-summary {
+    margin-top: 20px;
+  }
+}
