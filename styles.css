@@ -6585,3 +6585,10 @@ body.theme-open {
     background: var(--panel);
   }
 }
+
+/* Mobile: remove animated decorative background layers for a calmer, lighter page. */
+@media (max-width: 760px) {
+  .background-waves {
+    display: none !important;
+  }
+}
