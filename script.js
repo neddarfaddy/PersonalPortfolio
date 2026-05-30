@@ -45,8 +45,8 @@ const mediaLightboxCaption = document.querySelector("[data-media-caption]");
 const mediaCloseButtons = document.querySelectorAll("[data-media-close]");
 const gsapScript = document.querySelector("[data-gsap]");
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-const THEME_STORAGE_KEY = "portfolio-theme-v20";
-const OLD_THEME_STORAGE_KEYS = ["portfolio-theme", "portfolio-theme-v16", "portfolio-theme-v17", "portfolio-theme-v18"];
+const THEME_STORAGE_KEY = "portfolio-theme-v22";
+const OLD_THEME_STORAGE_KEYS = ["portfolio-theme", "portfolio-theme-v16", "portfolio-theme-v17", "portfolio-theme-v18", "portfolio-theme-v20"];
 const THEME_BACKGROUNDS = {
   default: "#121312",
   olive: "#10140f",
@@ -896,17 +896,24 @@ function setTheme(theme) {
   root.setAttribute("data-theme", themeValue);
   root.style.setProperty("--initial-bg", background);
   root.style.setProperty("--initial-transition-bg", transitionBackground);
+  // Keep the root canvas in sync immediately. This is especially important on iOS,
+  // where the overscroll/browser-chrome area is painted from the html background.
+  root.style.setProperty("--background", background);
   root.style.backgroundColor = background;
   root.style.colorScheme = LIGHT_THEMES.has(themeValue) ? "light" : "dark";
 
   if (body) {
     body.setAttribute("data-theme", themeValue);
+    body.style.setProperty("--background", background);
     body.style.backgroundColor = background;
     body.style.colorScheme = LIGHT_THEMES.has(themeValue) ? "light" : "dark";
   }
 
   document.querySelector('meta[name="theme-color"]')?.setAttribute("content", background);
   document.querySelector(".page-transition")?.style.setProperty("background", transitionBackground);
+
+  // Force WebKit to repaint the root canvas immediately after a live theme switch.
+  void root.offsetHeight;
 
   document.querySelectorAll(".background-waves span").forEach((wave) => {
     wave.style.animationName = "none";
