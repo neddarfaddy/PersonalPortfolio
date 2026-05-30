@@ -722,6 +722,107 @@ function setupAutoCarousels() {
     });
   });
 }
+
+
+function setupMobileGalleryScrollbars() {
+  const mobileQuery = window.matchMedia("(max-width: 760px)");
+  const selector = ".case-carousel-viewport, .care-screen-row";
+
+  const bindScroller = (scroller) => {
+    if (!(scroller instanceof HTMLElement)) return;
+    if (scroller.dataset.mobileScrollbarBound === "true") return;
+    scroller.dataset.mobileScrollbarBound = "true";
+
+    const bar = document.createElement("div");
+    bar.className = "mobile-gallery-scrollbar";
+    bar.setAttribute("aria-hidden", "true");
+
+    const thumb = document.createElement("div");
+    thumb.className = "mobile-gallery-scrollbar-thumb";
+    bar.append(thumb);
+    scroller.insertAdjacentElement("afterend", bar);
+
+    const update = () => {
+      const maxScroll = Math.max(0, scroller.scrollWidth - scroller.clientWidth);
+      if (!mobileQuery.matches || maxScroll <= 2) {
+        bar.hidden = true;
+        return;
+      }
+
+      bar.hidden = false;
+      const visibleRatio = Math.min(1, scroller.clientWidth / scroller.scrollWidth);
+      const thumbPercent = Math.max(18, visibleRatio * 100);
+      const leftPercent = maxScroll > 0
+        ? (scroller.scrollLeft / maxScroll) * (100 - thumbPercent)
+        : 0;
+
+      thumb.style.width = `${thumbPercent}%`;
+      thumb.style.left = `${leftPercent}%`;
+    };
+
+    let dragging = false;
+    let pointerId = null;
+    let grabOffset = 0;
+
+    const scrollFromPointer = (event) => {
+      const rect = bar.getBoundingClientRect();
+      const maxScroll = Math.max(0, scroller.scrollWidth - scroller.clientWidth);
+      const available = Math.max(1, rect.width - thumb.offsetWidth);
+      const rawX = event.clientX - rect.left - grabOffset;
+      const x = Math.max(0, Math.min(available, rawX));
+      scroller.scrollLeft = (x / available) * maxScroll;
+    };
+
+    bar.addEventListener("pointerdown", (event) => {
+      if (!mobileQuery.matches || bar.hidden) return;
+      dragging = true;
+      pointerId = event.pointerId;
+      const thumbRect = thumb.getBoundingClientRect();
+      grabOffset = event.target === thumb
+        ? event.clientX - thumbRect.left
+        : thumb.offsetWidth / 2;
+      bar.setPointerCapture?.(event.pointerId);
+      scrollFromPointer(event);
+      event.preventDefault();
+    });
+
+    bar.addEventListener("pointermove", (event) => {
+      if (!dragging || event.pointerId !== pointerId) return;
+      scrollFromPointer(event);
+      event.preventDefault();
+    });
+
+    const stopDrag = (event) => {
+      if (!dragging) return;
+      if (event?.pointerId != null && event.pointerId !== pointerId) return;
+      dragging = false;
+      pointerId = null;
+    };
+
+    bar.addEventListener("pointerup", stopDrag);
+    bar.addEventListener("pointercancel", stopDrag);
+    bar.addEventListener("lostpointercapture", stopDrag);
+    scroller.addEventListener("scroll", update, { passive: true });
+
+    scroller.querySelectorAll("img").forEach((image) => {
+      if (!image.complete) image.addEventListener("load", update, { once: true });
+    });
+
+    if ("ResizeObserver" in window) {
+      const observer = new ResizeObserver(update);
+      observer.observe(scroller);
+      observer.observe(scroller.firstElementChild || scroller);
+    }
+
+    window.addEventListener("resize", update, { passive: true });
+    requestAnimationFrame(update);
+  };
+
+  const bindAll = () => document.querySelectorAll(selector).forEach(bindScroller);
+  bindAll();
+  mobileQuery.addEventListener?.("change", bindAll);
+}
+
 function setupVideoPreviews() {
   const videoPreviewCards = document.querySelectorAll(".case-video-card");
   if (!videoPreviewCards.length) return;
@@ -1127,6 +1228,7 @@ setupContactButtons();
 setupSkillToggles();
 setupBeforeAfterSliders();
 setupAutoCarousels();
+setupMobileGalleryScrollbars();
 setupVideoPreviews();
 setupMediaLightbox();
 setupPageTransitions();
