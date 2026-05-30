@@ -7238,3 +7238,73 @@ body.theme-open {
     margin-top: 20px;
   }
 }
+
+
+/* v39 - CareRoute prototype-to-final comparison gallery */
+.case-careroute .care-prototype-gallery {
+  overflow: hidden;
+}
+.case-careroute .care-prototype-row {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 18px 18px 16px;
+  scroll-snap-type: x proximity;
+}
+.case-careroute .care-prototype-pair {
+  flex: 0 0 min(760px, 86vw);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  scroll-snap-align: start;
+}
+.case-careroute .care-prototype-pair > div {
+  min-width: 0;
+}
+.case-careroute .care-prototype-pair span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.case-careroute .care-prototype-pair img {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  background: transparent;
+  border-radius: 0;
+}
+.case-careroute .care-prototype-pair p {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding-top: 2px;
+  color: var(--muted);
+  font-size: 14px;
+}
+@media (max-width: 760px) {
+  .case-careroute .care-prototype-row {
+    gap: 12px;
+    padding: 14px 12px 12px;
+  }
+  .case-careroute .care-prototype-pair {
+    flex-basis: 88vw;
+    gap: 8px;
+  }
+  .case-careroute .care-prototype-pair span {
+    margin-bottom: 6px;
+    font-size: 10px;
+  }
+  .case-careroute .care-prototype-pair p {
+    font-size: 13px;
+  }
+}
+
+/* v40: prototype-to-final comparison uses standalone final UI exports */
+.case-careroute .care-prototype-pair > div:nth-of-type(2) img {
+  object-fit: contain;
+  background: transparent;
+}
